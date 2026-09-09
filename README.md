@@ -27,6 +27,22 @@ The original code remains the work of its authors. Their copyright notices and t
 [GPL-3.0 license](LICENSE) are retained. This fork does not claim ownership of the
 upstream code or third-party artwork. See [credits and licenses](NOTICE.md).
 
+## macOS download
+
+Download the Apple Silicon **unsigned interface preview** from [Releases](https://github.com/jasmine889966/Marxism/releases).
+This build cannot set up the shared profile container or VPN tunnel. iCloud backup
+is also unavailable. It is for trying the interface, not for use as a working proxy.
+
+Open the DMG and drag Marxism to Applications. The app has no Developer ID signature
+or Apple notarization, so macOS may block it. Only approve it in System Settings →
+Privacy & Security if you trust the download. Do not disable Gatekeeper.
+The release includes SHA-256 checksums.
+
+iPhone, iPad and Apple TV device packages are not included. Build them with your own
+signing team and provisioning profiles. A functional Mac build distributed outside
+the App Store also needs a System Extension adaptation; signing this preview alone
+is not enough.
+
 ## Screenshots
 
 ![Marxism on macOS — English](docs/screenshots/macos-home-en.png)

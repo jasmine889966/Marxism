@@ -65,7 +65,7 @@ this repository. Local private inputs/logs remain ignored under `.build/private/
   remain unverified. First-run launch and English rendering are verified.
 - Exhaustive VoiceOver, maximum Dynamic Type, reduced motion, iPad rotation and
   every localized editor/dialog require further interactive/device coverage.
-- App Store distribution and signed installers are outside this delivery.
+- App Store distribution, Developer ID signing and notarization remain unverified.
 
 The reported CloudKit startup crash was reproduced: an unentitled build initialized
 CKContainer. The new preflight prevents container creation and uses the existing
@@ -109,3 +109,17 @@ Source and artwork licenses are listed separately in NOTICE.md and the READMEs.
 The original GPL-3.0 file is unchanged. The three app targets build with the new
 notice; Mac About was inspected in English and Chinese. The Chinese README now
 uses actual Chinese Mac, iPhone, iPad and Apple TV captures, all at normal text size.
+
+## Apple Silicon preview package
+
+HakoMac Release was built for arm64 with code signing disabled. The main executable,
+packet tunnel extension and widget extension contain only arm64 slices. The Release
+app launches on the build machine and reports the unavailable shared profile container.
+The executable has the linker’s ad-hoc signature, no developer team identity and no
+sealed resource signature. It has not been notarized or tested as a quarantined download
+on another Mac. The deployment target is macOS 13; widgets require macOS 14.
+
+The DMG includes the application, an Applications shortcut, bilingual installation
+notes, GPL-3.0 and NOTICE.md. This is an interface preview: VPN, the shared profile
+container and iCloud backup are unavailable. Other platforms are source-only.
+The packaging script is `script/package_macos_preview.sh`; SHA-256 accompanies the release.

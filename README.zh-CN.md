@@ -25,6 +25,18 @@ Marxism 是基于 [TokenPLS/Hako-Client](https://github.com/TokenPLS/Hako-Client
 原项目代码的版权属于原作者，本仓库保留原版权声明和 [GPL-3.0 许可证](LICENSE)。
 我们不把上游代码或第三方图片称作自己的原创作品。[版权与素材说明](NOTICE.md)。
 
+## macOS 下载
+
+[Releases](https://github.com/jasmine889966/Marxism/releases) 提供 Apple Silicon **未签名界面预览包**。
+当前包无法建立共享配置容器或 VPN 隧道，iCloud 备份也不可用。可以体验界面，不能当作正常代理客户端使用。
+
+打开 DMG，将 Marxism 拖入 Applications。应用没有 Developer ID 签名和 Apple 公证，
+macOS 可能拦截打开；只有在信任下载来源时，才在「系统设置 → 隐私与安全性」中允许打开。
+不要关闭 Gatekeeper。下载页附有 SHA-256 校验值。
+
+iPhone、iPad 和 Apple TV 不提供设备安装包，请用自己的开发团队和描述文件构建。
+要通过站外分发使用 Mac 真实隧道，还需要适配 System Extension，仅给此预览包补签名并不够。
+
 ## 中文界面
 
 ![Mac 中文首页](docs/screenshots/macos-home-zh-Hans.png)
