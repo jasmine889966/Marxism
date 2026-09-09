@@ -14,6 +14,9 @@ public enum SovietCopy {
     public static let workers = "Workers of all countries, unite!"
     public static let electrification = "Communism is Soviet power plus the electrification of the whole country."
     public static let attribution = "Lenin, 1920"
+    public static let independence = "This is an independent open-source project and is not affiliated with or endorsed by any government, political party, or organization."
+    public static let entertainment = "This is a just-for-fun visual theme. The portraits, symbols and slogans are decorative. They carry no political message and do not express or promote a political position."
+    public static let credits = "Forked from TokenPLS/Hako-Client. Thank you to TokenPLS and its contributors. Their copyright notices and the GPL-3.0 license are retained."
     public static let derivative = "An unofficial derivative of TokenPLS/Hako-Client. Licensed under GPL-3.0."
 }
 
@@ -95,5 +98,21 @@ public enum SovietConnectionCopy {
         case .recoverableError: return "The link needs attention"
         case .directRecovery: return "Direct connection restored"
         }
+    }
+}
+
+public struct SovietProjectNotice: View {
+    public init() {}
+    public var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(hako: .copy(SovietCopy.independence))
+                .fontWeight(.semibold)
+            Text(hako: .copy(SovietCopy.entertainment))
+            Text(hako: .copy(SovietCopy.credits))
+        }
+        .font(.footnote)
+        .foregroundStyle(.secondary)
+        .fixedSize(horizontal: false, vertical: true)
+        .accessibilityElement(children: .combine)
     }
 }

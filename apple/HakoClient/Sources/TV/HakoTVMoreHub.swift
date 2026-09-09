@@ -187,11 +187,14 @@ struct HakoTVMoreHub: View {
      
      
     private var about: some View {
+        ScrollView {
         VStack(spacing: 12) {
             HakoTVBrandMark(width: HakoTVBrandMark.aboutWidth)
                 .padding(.bottom, 20)
             SovietHistoricalNote()
                 .foregroundStyle(SovietColors.text)
+                .padding(.bottom, 12)
+            SovietProjectNotice()
                 .padding(.bottom, 12)
             Text("Marxism")
                 .font(.title2)
@@ -206,7 +209,10 @@ struct HakoTVMoreHub: View {
                 .foregroundStyle(.tertiary)
         }
         .multilineTextAlignment(.center)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: 1100)
+        .padding(.vertical, 40)
+        .frame(maxWidth: .infinity)
+        }
         .accessibilityElement(children: .combine)
         .accessibilityIdentifier("tvos.more.about")
     }

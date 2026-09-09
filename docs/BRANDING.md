@@ -1,6 +1,13 @@
 # Marxism visual identity
 
-Marxism is an unofficial GPL-3.0 derivative of TokenPLS/Hako-Client.
+Marxism is a just-for-fun reskin of TokenPLS/Hako-Client, released under GPL-3.0.
+
+This is an independent open-source project and is not affiliated with or endorsed by any government, political party, or organization.
+
+The theme is for entertainment. Its portraits, symbols and slogans are decoration,
+not a political message or an expression of political support. Original copyright
+notices are retained. Thanks to TokenPLS and all upstream contributors.
+See [project notice and credits](../NOTICE.md).
 
 The visual layer uses warm neutral surfaces, deep red navigation, system typography,
 compact native controls and a Soviet historical identity. Home and product icons use

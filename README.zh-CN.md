@@ -4,16 +4,39 @@
 
 [English](README.md) · 简体中文
 
-基于 TokenPLS/Hako-Client 的 Apple 原生规则代理客户端衍生版本，覆盖 iPhone、
-iPad、Mac 和 Apple TV。使用苏联历史视觉、马克思、恩格斯、列宁同向肖像与标准苏联锤镰符号、深红导航与暖白界面，
-保留原项目的配置、订阅、代理、规则、DNS、流量、日志与隧道能力。
+Marxism 是基于 [TokenPLS/Hako-Client](https://github.com/TokenPLS/Hako-Client)
+做的一个娱乐性换肤版本，支持 iPhone、iPad、Mac 和 Apple TV。
+主要改了配色、图标和界面文案，代理功能来自原项目。
 
-**This project is a modified derivative of TokenPLS/Hako-Client.**
-**Licensed under GPL-3.0.** 本项目不是上游官方版本，不代表任何政府或政治组织。
+**本项目为独立开源项目，与任何政府、政党或组织均无关联，也未获得其认可或背书。**
 
-![Mac 首页：无签名开发构建](docs/screenshots/macos-home-en.png)
+**纯属娱乐，没有政治含义。** 界面中的肖像、符号和标语只作装饰，
+不表达或宣传任何政治立场。本项目也不是 Hako-Client 官方版本。
 
-[查看英文多平台截图](README.md#native-on-every-screen)。截图来自实际运行的开发构建；缺少共享容器时如实显示不可用，不伪造连接或流量。
+## 原项目与致谢
+
+本项目 fork 自 **[TokenPLS/Hako-Client](https://github.com/TokenPLS/Hako-Client)**，
+起点为提交 `b05832246fcac69d13ff16df871a8d53fd394c10`。
+感谢 **TokenPLS 和所有 Hako-Client 贡献者**，也感谢
+[Hako](https://github.com/TokenPLS/Hako) 与
+[Hako-Adapter](https://github.com/TokenPLS/Hako-Adapter) 的贡献者。
+没有他们完成的客户端、内核和 Apple 平台适配，就没有这个换肤版本。
+
+原项目代码的版权属于原作者，本仓库保留原版权声明和 [GPL-3.0 许可证](LICENSE)。
+我们不把上游代码或第三方图片称作自己的原创作品。[版权与素材说明](NOTICE.md)。
+
+## 中文界面
+
+![Mac 中文首页](docs/screenshots/macos-home-zh-Hans.png)
+
+| iPhone 17e | iPad Pro 13 英寸 |
+| --- | --- |
+| <img src="docs/screenshots/iphone-17e-home-zh-Hans.png" alt="iPhone 中文界面" width="280"> | <img src="docs/screenshots/ipad-pro-13-home-zh-Hans.png" alt="iPad 中文界面" width="520"> |
+
+![Apple TV 中文界面](docs/screenshots/apple-tv-1080p-zh-Hans.png)
+
+截图来自正常字号下实际运行的开发构建。部分页面显示签名或 VPN 配置错误，
+具体情况见[验证记录](docs/VERIFICATION.md)。
 
 ## 换肤内容
 
@@ -55,4 +78,4 @@ python3 scripts/configure.py
 
 ## 开源许可
 
-保留 [GPL-3.0](LICENSE)、上游版权、第三方资源许可与致谢。品牌资源分别保留 CC BY-SA 4.0（肖像及衍生图标）与 CC0（锤镰符号），新增源码采用 GPL-3.0。本轮提供公开源码，不包含 App Store 提交或签名安装包发布。
+保留 [GPL-3.0](LICENSE)、上游版权、第三方资源许可与致谢。品牌资源分别保留 CC BY-SA 4.0（肖像及衍生图标）与 CC0（锤镰符号），新增源码采用 GPL-3.0。这里提供源码，暂不提供签名安装包。

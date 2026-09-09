@@ -1,7 +1,7 @@
 # Screenshots
 
-Captured from running Marxism development builds on 2026-09-09. The gallery uses
-English app language and standard text size. Images are not mockups or composites.
+Captured from running Marxism development builds on 2026-09-09. The main gallery uses
+English app language and standard text size. A separate Chinese gallery is linked below. Images are not mockups or composites.
 The simulator system status bar may follow the host's locale.
 
 | Capture | Environment | Resolution |
@@ -34,3 +34,13 @@ No fixture, connected-state override or private subscription was used.
 ## Historical identity and attribution
 
 ![About Marxism](macos-about-en.png)
+
+## Chinese interface
+
+These are separate captures of the app running in Simplified Chinese at normal text size.
+They are also shown in the [Chinese README](../../README.zh-CN.md).
+
+- [Mac home](macos-home-zh-Hans.png)
+- [iPhone 17e home](iphone-17e-home-zh-Hans.png)
+- [iPad Pro 13-inch home](ipad-pro-13-home-zh-Hans.png)
+- [Apple TV welcome](apple-tv-1080p-zh-Hans.png)

@@ -213,8 +213,9 @@ public struct HakoAboutView<
                 Link("Portraits: Eugenio Hansen, OFS · CC BY-SA 4.0",
                      destination: URL(string: "https://commons.wikimedia.org/wiki/File:Marx_%2B_Engels_%2B_Lenin_.svg")!)
                     .font(.caption)
-                Text(hako: .copy(SovietCopy.derivative))
-                    .font(.footnote).foregroundStyle(.secondary)
+                SovietProjectNotice()
+                Link("TokenPLS/Hako-Client", destination: URL(string: "https://github.com/TokenPLS/Hako-Client")!)
+                    .font(.footnote)
             }
 
             componentsSection

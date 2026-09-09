@@ -112,3 +112,13 @@ and the action label remains complete at both resolutions.
 
 Official installation procedure:
 https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components
+
+## Project notice and Chinese gallery
+
+The English README and app About page include the requested independent-project
+statement verbatim. The entertainment-only purpose and upstream attribution are
+translated into Simplified and Traditional Chinese using the existing catalogs.
+Source and artwork licenses are listed separately in NOTICE.md and the READMEs.
+The original GPL-3.0 file is unchanged. The three app targets build with the new
+notice; Mac About was inspected in English and Chinese. The Chinese README now
+uses actual Chinese Mac, iPhone, iPad and Apple TV captures, all at normal text size.

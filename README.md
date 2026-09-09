@@ -4,15 +4,30 @@
 
 [中文说明 →](README.zh-CN.md)
 
-Marxism is a native rule-based proxy client for iPhone, iPad, Mac and Apple TV,
-with a Soviet-inspired visual theme, licensed historical artwork and localized
-historical slogans. Configuration, routing and tunnel behavior come from Hako-Client.
+Marxism is a just-for-fun reskin of [TokenPLS/Hako-Client](https://github.com/TokenPLS/Hako-Client)
+for iPhone, iPad, Mac and Apple TV. It gives the original app a red-and-cream theme,
+historical portraits and themed labels. The proxy features come from Hako-Client.
 
-**This project is a modified derivative of TokenPLS/Hako-Client.**
-**Licensed under GPL-3.0.** This is not an official upstream release and is not
-affiliated with or endorsed by any government or political organization.
+**This is an independent open-source project and is not affiliated with or endorsed by any government, political party, or organization.**
 
-## Native on every screen
+This is an entertainment project, not a political statement. The portraits, symbols
+and slogans are decoration. They carry no political message and do not express or
+promote a political position. This is not an official Hako-Client release.
+
+## Original project and thanks
+
+This project is a fork of **[TokenPLS/Hako-Client](https://github.com/TokenPLS/Hako-Client)**,
+starting at commit `b05832246fcac69d13ff16df871a8d53fd394c10`.
+Thank you to **TokenPLS and all Hako-Client contributors** for the original client,
+and to the contributors to [Hako](https://github.com/TokenPLS/Hako) and
+[Hako-Adapter](https://github.com/TokenPLS/Hako-Adapter) for the core and Apple integration.
+This fork would not exist without their work.
+
+The original code remains the work of its authors. Their copyright notices and the
+[GPL-3.0 license](LICENSE) are retained. This fork does not claim ownership of the
+upstream code or third-party artwork. See [credits and licenses](NOTICE.md).
+
+## Screenshots
 
 ![Marxism on macOS — English](docs/screenshots/macos-home-en.png)
 
@@ -30,9 +45,8 @@ affiliated with or endorsed by any government or political organization.
 
 [View the full 4K capture](docs/screenshots/apple-tv-4k-en.png).
 
-Real application captures, using standard text sizes and English app language.
-Development builds honestly show missing capabilities; no successful VPN connection
-or traffic is staged. [Screenshot details and more views](docs/screenshots/README.md).
+These screenshots show the app running in English at normal text size.
+They were taken from development builds, so some show signing or VPN setup errors. [Screenshot details and more views](docs/screenshots/README.md).
 Apple TV was also checked on the tvOS 27 Simulator at 1080p and 4K.
 See [verification](docs/VERIFICATION.md) for the exact scope and remaining checks.
 
@@ -44,8 +58,6 @@ See [verification](docs/VERIFICATION.md) for the exact scope and remaining check
 - A startup guard reports missing iCloud capability instead of crashing in unsigned builds.
 - Core/profile/network models, dependency pins, import formats and URL schemes remain upstream-compatible.
 
-The first derivative is based on upstream commit
-`b05832246fcac69d13ff16df871a8d53fd394c10`.
 Internal Hako module names and compatible technical identifiers are deliberately retained.
 
 ## Build from source
@@ -105,5 +117,14 @@ Remove credentials, subscription URLs and personal data from reports and screens
 
 ## License
 
-[GPL-3.0](LICENSE). Original copyrights and third-party licenses remain with their
-sources and resources. New source and licensed historical artwork use the same license.
+The source code is licensed under [GPL-3.0](LICENSE), including this fork's changes.
+Original copyright notices and third-party licenses are retained.
+
+The artwork has separate licenses:
+
+- The Marx, Engels and Lenin portraits are by **Eugenio Hansen, OFS**, under
+  **CC BY-SA 4.0**. App icons made from them use the same artwork license.
+- The Soviet hammer-and-sickle artwork is available under **CC0 1.0**.
+
+[Artwork sources and full notices](docs/BRANDING.md#artwork-and-licenses) are included
+in the repository and the app. Using the artwork does not imply the artists endorse this project.

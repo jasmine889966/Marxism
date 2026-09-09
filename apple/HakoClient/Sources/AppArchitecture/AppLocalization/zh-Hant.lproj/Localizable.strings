@@ -205,7 +205,7 @@
 "Accent Color" = "強調色";
 "Accept Routes" = "接受路由 (Accept Routes)";
 "Accessibility text" = "輔助功能文字";
-"Acknowledgements" = "Acknowledgements";
+"Acknowledgements" = "第三方致謝";
 "Action" = "操作";
 "Activate" = "啟用";
 "Activate or sync this profile first." = "請先啟用或同步該設定檔。";
@@ -1883,7 +1883,7 @@
 "Previous run ended unexpectedly" = "上次執行異常結束";
 "Primary Port" = "主連接埠";
 "Privacy" = "隱私權";
-"Privacy Policy" = "Privacy Policy";
+"Privacy Policy" = "隱私權政策";
 "Private Key" = "私鑰";
 "Private Key Passphrase" = "私鑰口令";
 "Probe URL" = "探測 URL";
@@ -2506,7 +2506,7 @@
 "Target not in this profile" = "目標不在此設定檔中";
 "Technical details" = "技術細節";
 "Terminal" = "終端";
-"Terms of Use" = "Terms of Use";
+"Terms of Use" = "使用條款";
 "Test All" = "全部測速";
 "Test All Chains" = "測試全部鏈路";
 "Test Anyway" = "仍然測試";
@@ -3328,3 +3328,12 @@
 "Link Activity" = "聯絡動態";
 "Configuration Archives" = "配置檔案";
 "Engineering Tools" = "工程工具";
+
+// Project purpose and upstream credit.
+"This is an independent open-source project and is not affiliated with or endorsed by any government, political party, or organization." = "本專案為獨立開源專案，與任何政府、政黨或組織均無關聯，也未獲得其認可或背書。";
+"This is a just-for-fun visual theme. The portraits, symbols and slogans are decorative. They carry no political message and do not express or promote a political position." = "這是一個純屬娛樂的換膚版本。肖像、符號和標語只作裝飾，沒有政治含義，不表達或宣傳任何政治立場。";
+"Forked from TokenPLS/Hako-Client. Thank you to TokenPLS and its contributors. Their copyright notices and the GPL-3.0 license are retained." = "本專案 fork 自 TokenPLS/Hako-Client。感謝 TokenPLS 及所有貢獻者。原作者的版權聲明和 GPL-3.0 授權條款均予以保留。";
+
+"Components" = "元件";
+
+"Portraits: Eugenio Hansen, OFS · CC BY-SA 4.0" = "肖像：Eugenio Hansen, OFS · CC BY-SA 4.0";

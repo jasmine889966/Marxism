@@ -21,6 +21,11 @@ keys=['Workers of all countries, unite!',
  'Configure the link','International Links','Line Construction',
  'Proxy Stations','Routing Principles','Link Activity','Configuration Archives',
  'Engineering Tools','More Settings']
+notice_source=(ROOT/'apple/HakoClientUI/Sources/HakoClientUI/Components/SovietBrand.swift').read_text()
+for name in ['independence','entertainment','credits']:
+ match=re.search(r'public static let '+name+r' = "([^"\n]+)"',notice_source)
+ if match: keys.append(match.group(1))
+ else: errors.append('Missing project notice: '+name)
 catalogs=list((ROOT/'apple/HakoClient').rglob('Localizable.strings'))
 for p in catalogs:
  if '.build' in p.parts:continue
