@@ -29,17 +29,41 @@ public struct HakoEmptyState<Icon: View>: View {
                 ProgressView()
                     .controlSize(.large)
             } else {
-                icon
-                    .font(.largeTitle)
-                    .foregroundStyle(.secondary)
-                    .accessibilityHidden(true)
+                ZStack(alignment: .bottomTrailing) {
+                    RoundedRectangle(cornerRadius: 22)
+                        .fill(SovietColors.red.opacity(0.08))
+                        .frame(width: 76, height: 76)
+                        .overlay {
+                            if isDisconnected {
+                                SovietBrandMark()
+                                    .frame(width: 38, height: 38)
+                                    .foregroundStyle(SovietColors.red)
+                            } else if isMissingProfile {
+                                Image(systemName: "doc.text")
+                                    .font(.system(size: 30, weight: .medium))
+                                    .foregroundStyle(SovietColors.red)
+                            } else {
+                                icon.font(.system(size: 30, weight: .medium))
+                                    .foregroundStyle(SovietColors.red)
+                            }
+                        }
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 12, weight: .bold))
+                        .foregroundStyle(SovietColors.gold)
+                        .padding(5)
+                        .background(SovietColors.surface, in: Circle())
+                        .offset(x: 5, y: 5)
+                }
+                .padding(.bottom, 8)
+                .accessibilityHidden(true)
             }
 
-            Text(LocalizedStringKey(title))
-                .font(.headline)
+            Text(hako: .copy(title))
+                .font(.title3.weight(.semibold))
+                .fixedSize(horizontal: false, vertical: true)
                 .multilineTextAlignment(.center)
 
-            Text(LocalizedStringKey(message))
+            Text(hako: .copy(message))
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
@@ -49,5 +73,11 @@ public struct HakoEmptyState<Icon: View>: View {
         .padding(.horizontal, HakoTheme.Spacing.section)
         .padding(.vertical, 40)
         .accessibilityElement(children: .combine)
+    }
+    private var isDisconnected: Bool {
+        ["Clash Is Disconnected", "Clash is disconnected", "Not Connected", "Disconnected"].contains(title)
+    }
+    private var isMissingProfile: Bool {
+        ["No Profile", "No Profiles", "No profiles yet"].contains(title)
     }
 }

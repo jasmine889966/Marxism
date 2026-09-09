@@ -67,15 +67,17 @@ public struct HakoRootSidebarRow<Icon: View>: View {
     }
 
     private var sidebarIcon: some View {
-        icon
-            .font(.system(
-                size: HakoTheme.Regular.Sidebar.iconSize,
-                weight: .semibold
-            ))
-            .frame(
-                width: HakoTheme.Regular.Sidebar.iconSize,
-                height: HakoTheme.Regular.Sidebar.iconSize
-            )
+        Group {
+            if destination == .home {
+                SovietBrandMark()
+            } else {
+                Image(systemName: sidebarSymbol)
+                    .font(.system(size: 21, weight: .medium))
+            }
+        }
+        .frame(width: 24, height: 24)
+        .foregroundStyle(isSelected ? SovietColors.sidebarGold : SovietColors.onRed.opacity(0.85))
+        .accessibilityHidden(true)
     }
 
      
@@ -93,6 +95,20 @@ public struct HakoRootSidebarRow<Icon: View>: View {
      
      
      
+    private var sidebarSymbol: String {
+        switch destination {
+        case .home: "star.fill"
+        case .proxies: "network"
+        case .rules: "point.3.connected.trianglepath.dotted"
+        case .activity: "waveform.path"
+        case .profiles: "doc.text"
+        case .dns: "globe"
+        case .utilities: "wrench.and.screwdriver"
+        case .more: "slider.horizontal.3"
+        case .about: "info.circle"
+        }
+    }
+
     private var contentStyle: AnyShapeStyle {
         AnyShapeStyle(SovietColors.onRed)
     }
@@ -108,7 +124,8 @@ public struct HakoRootSidebarRow<Icon: View>: View {
          
         HStack(spacing: 0) {
             Text(hako: .copy(destination.title))
-                .lineLimit(1)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
                 .foregroundStyle(contentStyle)
 #if os(macOS)
              

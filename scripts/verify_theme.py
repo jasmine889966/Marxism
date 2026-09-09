@@ -16,7 +16,11 @@ changed=subprocess.check_output(['git','diff',BASE,'--name-only','--',*protected
 if changed.strip():errors.append('Protected network/model/license files changed: '+changed)
 keys=['Workers of all countries, unite!',
  'Communism is Soviet power plus the electrification of the whole country.',
- 'Lenin, 1920','Karl Marx, Friedrich Engels and Vladimir Lenin']
+ 'Lenin, 1920','Karl Marx, Friedrich Engels and Vladimir Lenin',
+ 'Connect to communism','Disconnect the link','Cancel the link','Rebuild the link',
+ 'Configure the link','International Links','Line Construction',
+ 'Proxy Stations','Routing Principles','Link Activity','Configuration Archives',
+ 'Engineering Tools','More Settings']
 catalogs=list((ROOT/'apple/HakoClient').rglob('Localizable.strings'))
 for p in catalogs:
  if '.build' in p.parts:continue

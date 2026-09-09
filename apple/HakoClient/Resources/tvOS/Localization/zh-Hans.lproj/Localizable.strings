@@ -32,7 +32,7 @@
 "Checking…" = "正在检查…";
 "Choice confirmed %@" = "选择确认于 %@";
 "Choose the device to restore from" = "选择要从哪台设备恢复";
-"Clash" = "Clash";
+"Clash" = "Marxism";
 "Clash could not open its secure shared container." = "Marxism 无法打开其安全共享容器。";
 "Configuration" = "配置";
 "Configuration is empty" = "配置为空";
@@ -225,9 +225,9 @@
 "Test all" = "全部测速";
 "Testing…" = "测速中…";
 "That configuration is not a text file. Choose a different one." = "这份配置不是文本文件，请换一份。";
-"The Clash packet tunnel did not answer in time." = "Clash 隧道未及时应答。";
-"The Clash packet tunnel is not available." = "Clash 隧道不可用。";
-"The Clash packet tunnel returned an invalid response." = "Clash 隧道返回了无效响应。";
+"The Clash packet tunnel did not answer in time." = "Marxism 隧道未及时应答。";
+"The Clash packet tunnel is not available." = "Marxism 隧道不可用。";
+"The Clash packet tunnel returned an invalid response." = "Marxism 隧道返回了无效响应。";
 "The URL is what gets remembered. The configuration behind it is downloaded again whenever this Apple TV needs it." = "记住的是 URL。它背后的配置会在这台 Apple TV 需要时重新下载。";
 "The active configuration changed while a replacement was being prepared" = "正在准备新配置时，当前配置被改动了";
 "The app version and build, for a support report." = "App 版本与构建号，供反馈问题时使用。";
@@ -244,7 +244,7 @@
 "The last memory sample received from the tunnel. Its read time is shown below; an unsuccessful update keeps the last sample." = "最近收到的隧道内存样本。下方显示读取时间；更新未成功时会保留上次样本。";
 "The most recent thing that went wrong, kept after it stopped being true. It covers this app session only; it does not know about a start that failed while the app was closed." = "最近一次出问题的事，问题过去之后仍然留着。它只覆盖本次打开的 App；App 关着时启动失败它不知道。";
 "The name is only what this Apple TV calls the address. The address itself, and what is downloaded from it, do not change." = "名称只是这台 Apple TV 对这个地址的称呼。地址本身以及从它下载的内容都不会改变。";
-"The name this app gives when it downloads a profile or a provider. Panels read it to decide which format to hand back, so Clash — the core's own name — is the one to keep unless a panel of yours answers better to another client." = "本 App 下载配置或 provider 时自称的名字。面板会按它决定回哪种格式，所以一般保持 Clash——那是内核自己的名字；除非你的面板对另一个客户端答得更好。";
+"The name this app gives when it downloads a profile or a provider. Panels read it to decide which format to hand back, so Clash — the core's own name — is the one to keep unless a panel of yours answers better to another client." = "本 App 下载配置或 provider 时自称的名字。面板会按它决定回哪种格式，所以一般保持 Marxism——那是内核自己的名字；除非你的面板对另一个客户端答得更好。";
 "The new address replaces the old one. What was downloaded from the old address is no longer used, and the new address is downloaded as soon as you save." = "新地址会取代旧的。旧地址下载的内容不再使用，保存后会立刻下载新地址。";
 "The node currently carrying proxied traffic. A url-test group may pick a different one for you. Press to see every group and node." = "当前承载代理流量的节点。url-test 组可能会替你换一个。按下可查看全部策略组与节点。";
 "The profile could not be downloaded: %@" = "配置下载失败：%@";
@@ -348,3 +348,25 @@
 "Switching communication lines" = "正在切换联络线路";
 "The link needs attention" = "联络受阻，请检查线路";
 "Direct connection restored" = "已恢复直连";
+
+// Marxism navigation and empty-state presentation.
+"Clash Is Disconnected" = "等待建立国际联络";
+"Clash is disconnected" = "联络尚未建立";
+"Connect Clash to inspect live sessions." = "回到首页，连接共产主义后，这里将显示实时代理会话。";
+"No Profile" = "尚未配置联络线路";
+"No Profiles" = "建立第一条联络线路";
+"No profiles yet" = "建立第一条联络线路";
+"Add a profile before browsing its rules." = "先在「配置档案」导入配置，再查看这条线路的路由准则。";
+"Add a profile before browsing its proxies." = "先在「配置档案」导入配置，再查看可用的代理联络站。";
+"No Active Connections" = "联络线路待命中";
+"Connections appear here while apps use the tunnel." = "代理已连接。应用通过隧道访问网络时，联络动态会显示在这里。";
+"Loading Connections" = "正在读取联络动态";
+"Connections Unavailable" = "暂时无法读取联络动态";
+"International Links" = "国际联络";
+"Line Construction" = "线路建设";
+"Proxy Stations" = "代理联络站";
+"Routing Principles" = "路由准则";
+"Link Activity" = "联络动态";
+"Configuration Archives" = "配置档案";
+"Engineering Tools" = "工程工具";
+"More Settings" = "更多设置";

@@ -68,3 +68,12 @@ Chinese strings are included. These are original product copy, not historical qu
 A short thematic status accompanies the existing technical status. Error details,
 proxy/direct distinctions, counters and durations remain factual. Snapshot values,
 serialized action identifiers and configuration contents are unchanged.
+
+## Navigation and empty states
+
+Navigation labels use Proxy Stations, Routing Principles, Link Activity,
+Configuration Archives, Engineering Tools and More Settings. The stable destination
+identifiers are retained. Shared empty states use red-tinted document or communist
+symbols with a small gold star, a descriptive title and a factual next-step message.
+Loading states retain progress indicators; errors remain errors. Sidebar labels,
+empty-state text and connection errors can wrap for longer English copy.

@@ -28,11 +28,11 @@ public enum HakoRootSidebarGroup: String, CaseIterable, Hashable, Sendable {
     public var title: String? {
         switch self {
         case .primary, .hub, .footer: nil
-        case .session: "Session"
+        case .session: "International Links"
          
          
          
-        case .configuration: "sidebar.band.configuration"
+        case .configuration: "Line Construction"
         }
     }
 }
@@ -138,17 +138,17 @@ public enum HakoRootDestination: String, CaseIterable, Hashable, Identifiable, S
     public var title: String {
         switch self {
         case .home: "Home"
-        case .proxies: "Proxies"
-        case .rules: "Rules"
-        case .activity: "Activity"
-        case .profiles: "Profiles"
+        case .proxies: "Proxy Stations"
+        case .rules: "Routing Principles"
+        case .activity: "Link Activity"
+        case .profiles: "Configuration Archives"
          
          
          
          
         case .dns: "DNS"
-        case .utilities: "Utilities"
-        case .more: "More"
+        case .utilities: "Engineering Tools"
+        case .more: "More Settings"
         case .about: "About"
         }
     }

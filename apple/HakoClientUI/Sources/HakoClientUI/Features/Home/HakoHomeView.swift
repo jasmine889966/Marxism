@@ -534,9 +534,7 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
                      
                      
                      
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.75)
-                    .truncationMode(.tail)
+                    .fixedSize(horizontal: false, vertical: true)
                      
                      
                      
@@ -604,7 +602,8 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
                         ProgressView().controlSize(.small)
                         Text(hako: .copy(cancellable ? "Cancel the link" : "Closing the link"))
                             .font(.subheadline.weight(.bold))
-                            .lineLimit(1)
+                            .lineLimit(dynamicTypeSize.isAccessibilitySize ? nil : 1)
+                            .fixedSize(horizontal: false, vertical: true)
                             .minimumScaleFactor(0.8)
                     }
                     .frame(maxWidth: .infinity, minHeight: 32)
@@ -631,7 +630,7 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
         .frame(
             minWidth: 160,
             idealWidth: dynamicTypeSize.isAccessibilitySize ? nil : 160,
-            maxWidth: dynamicTypeSize.isAccessibilitySize ? nil : 160,
+            maxWidth: dynamicTypeSize.isAccessibilitySize ? .infinity : 160,
             minHeight: primaryActionHeight(compaction: compaction),
             idealHeight: primaryActionHeight(compaction: compaction),
             maxHeight: dynamicTypeSize.isAccessibilitySize
@@ -663,15 +662,14 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
         let label = Text(HakoCopy.key(title))
             .font(.subheadline.weight(.bold))
             .multilineTextAlignment(.center)
-            .lineLimit(1)
-            .minimumScaleFactor(0.8)
 
         if dynamicTypeSize.isAccessibilitySize {
             label
-                .fixedSize(horizontal: true, vertical: true)
-                .frame(minHeight: 32)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, minHeight: 32)
         } else {
-            label.frame(
+            label.lineLimit(1).minimumScaleFactor(0.8).frame(
                 maxWidth: .infinity,
                 minHeight: HakoHomeHeaderCompaction.value(
                     expanded: 32,

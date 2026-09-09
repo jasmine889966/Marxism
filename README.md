@@ -2,7 +2,7 @@
 
 **Rule-based proxy utility · powered by Hako**
 
-English · [简体中文](README.zh-CN.md)
+[中文说明 →](README.zh-CN.md)
 
 Marxism is a native rule-based proxy client for iPhone, iPad, Mac and Apple TV,
 with a Soviet-inspired visual theme, licensed historical artwork and localized
@@ -12,11 +12,23 @@ historical slogans. Configuration, routing and tunnel behavior come from Hako-Cl
 **Licensed under GPL-3.0.** This is not an official upstream release and is not
 affiliated with or endorsed by any government or political organization.
 
-![Mac home — unsigned development build](docs/screenshots/macos-home-zh-Hans.png)
+## Native on every screen
 
-The screenshot shows the real unsigned development build. A missing shared
-container is shown as unavailable; no connection or traffic data is fabricated.
-See [verification](docs/VERIFICATION.md) for tested targets and remaining checks.
+![Marxism on macOS — English](docs/screenshots/macos-home-en.png)
+
+| iPhone 17e · iOS Simulator | iPad Pro 13-inch · iPadOS Simulator |
+| --- | --- |
+| <img src="docs/screenshots/iphone-17e-home-en.png" alt="English iPhone home" width="280"> | <img src="docs/screenshots/ipad-pro-13-home-en.png" alt="English iPad home with sidebar" width="520"> |
+
+| Dark appearance · iPad | Connection state · Mac |
+| --- | --- |
+| <img src="docs/screenshots/ipad-pro-13-home-dark-en.png" alt="English iPad dark appearance" width="420"> | <img src="docs/screenshots/macos-activity-en.png" alt="English disconnected activity state" width="520"> |
+
+Real application captures, using standard text sizes and English app language.
+Development builds honestly show missing capabilities; no successful VPN connection
+or traffic is staged. [Screenshot details and more views](docs/screenshots/README.md).
+The tvOS target builds, but its runtime was unavailable for screenshots.
+See [verification](docs/VERIFICATION.md) for the exact scope and remaining checks.
 
 ## What changed
 

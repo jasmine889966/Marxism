@@ -70,3 +70,26 @@ The reported CloudKit startup crash was reproduced: an unentitled build initiali
 CKContainer. The new preflight prevents container creation and uses the existing
 unavailable error path. This narrow crash repair is the only HakoClientKit behavior
 exception to the visual-only scope; it does not make backup operations succeed.
+
+## Follow-up UI and English review
+
+The shared empty-state component now uses the theme, wraps titles/descriptions,
+and distinguishes missing profiles from disconnected activity. The sidebar uses
+consistent line symbols and themed labels; destination raw values and action
+bindings are unchanged. Product-facing localized Clash wording was rebranded;
+third-party client names and compatibility references remain attributed.
+
+English Mac review traversed Home, Proxy Stations, Routing Principles, Link Activity,
+Configuration Archives, Engineering Tools, More Settings/Appearance, and About.
+The disconnected/missing-profile states, tool descriptions, historical quote and
+normal-size sidebar labels were visually checked at 1040 × 720. The English iPhone
+home at 390-point width exposed an over-constrained error message: it now wraps
+without shrinking. English iPad home was reviewed in light and dark appearance.
+Normal-size screenshots from these runs are published in the screenshot gallery.
+No claim of every editor or populated provider state is made.
+
+An exploratory maximum-text-size run exposed a fixed-width action label; that
+layout constraint was removed. Further maximum-accessibility-size testing was
+excluded at the user's request, and the simulator was restored to standard text.
+The gallery uses standard sizes only. Mac minimum-window resizing and full iPad
+rotation remain unverified; the observed Mac window stayed at its existing size.

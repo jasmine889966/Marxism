@@ -11,9 +11,9 @@ iPad、Mac 和 Apple TV。使用苏联历史视觉、马克思、恩格斯、列
 **This project is a modified derivative of TokenPLS/Hako-Client.**
 **Licensed under GPL-3.0.** 本项目不是上游官方版本，不代表任何政府或政治组织。
 
-![Mac 首页：无签名开发构建](docs/screenshots/macos-home-zh-Hans.png)
+![Mac 首页：无签名开发构建](docs/screenshots/macos-home-en.png)
 
-截图来自实际运行的无签名开发构建；缺少共享容器时如实显示不可用，不伪造连接或流量。
+[查看英文多平台截图](README.md#native-on-every-screen)。截图来自实际运行的开发构建；缺少共享容器时如实显示不可用，不伪造连接或流量。
 
 ## 换肤内容
 

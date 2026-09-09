@@ -32,7 +32,7 @@
 "Checking…" = "Checking…";
 "Choice confirmed %@" = "Choice confirmed %@";
 "Choose the device to restore from" = "Choose the device to restore from";
-"Clash" = "Clash";
+"Clash" = "Marxism";
 "Clash could not open its secure shared container." = "Marxism could not open its secure shared container.";
 "Configuration" = "Configuration";
 "Configuration is empty" = "Configuration is empty";
@@ -225,9 +225,9 @@
 "Test all" = "Test all";
 "Testing…" = "Testing…";
 "That configuration is not a text file. Choose a different one." = "That configuration is not a text file. Choose a different one.";
-"The Clash packet tunnel did not answer in time." = "The Clash packet tunnel did not answer in time.";
-"The Clash packet tunnel is not available." = "The Clash packet tunnel is not available.";
-"The Clash packet tunnel returned an invalid response." = "The Clash packet tunnel returned an invalid response.";
+"The Clash packet tunnel did not answer in time." = "The Marxism packet tunnel did not answer in time.";
+"The Clash packet tunnel is not available." = "The Marxism packet tunnel is not available.";
+"The Clash packet tunnel returned an invalid response." = "The Marxism packet tunnel returned an invalid response.";
 "The URL is what gets remembered. The configuration behind it is downloaded again whenever this Apple TV needs it." = "The URL is what gets remembered. The configuration behind it is downloaded again whenever this Apple TV needs it.";
 "The active configuration changed while a replacement was being prepared" = "The active configuration changed while a replacement was being prepared";
 "The app version and build, for a support report." = "The app version and build, for a support report.";
@@ -244,7 +244,7 @@
 "The last memory sample received from the tunnel. Its read time is shown below; an unsuccessful update keeps the last sample." = "The last memory sample received from the tunnel. Its read time is shown below; an unsuccessful update keeps the last sample.";
 "The most recent thing that went wrong, kept after it stopped being true. It covers this app session only; it does not know about a start that failed while the app was closed." = "The most recent thing that went wrong, kept after it stopped being true. It covers this app session only; it does not know about a start that failed while the app was closed.";
 "The name is only what this Apple TV calls the address. The address itself, and what is downloaded from it, do not change." = "The name is only what this Apple TV calls the address. The address itself, and what is downloaded from it, do not change.";
-"The name this app gives when it downloads a profile or a provider. Panels read it to decide which format to hand back, so Clash — the core's own name — is the one to keep unless a panel of yours answers better to another client." = "The name this app gives when it downloads a profile or a provider. Panels read it to decide which format to hand back, so Clash — the core's own name — is the one to keep unless a panel of yours answers better to another client.";
+"The name this app gives when it downloads a profile or a provider. Panels read it to decide which format to hand back, so Clash — the core's own name — is the one to keep unless a panel of yours answers better to another client." = "The name this app gives when it downloads a profile or a provider. Panels read it to decide which format to hand back, so Marxism — the core's own name — is the one to keep unless a panel of yours answers better to another client.";
 "The new address replaces the old one. What was downloaded from the old address is no longer used, and the new address is downloaded as soon as you save." = "The new address replaces the old one. What was downloaded from the old address is no longer used, and the new address is downloaded as soon as you save.";
 "The node currently carrying proxied traffic. A url-test group may pick a different one for you. Press to see every group and node." = "The node currently carrying proxied traffic. A url-test group may pick a different one for you. Press to see every group and node.";
 "The profile could not be downloaded: %@" = "The profile could not be downloaded: %@";
@@ -348,3 +348,25 @@
 "Switching communication lines" = "Switching communication lines";
 "The link needs attention" = "The link needs attention";
 "Direct connection restored" = "Direct connection restored";
+
+// Marxism navigation and empty-state presentation.
+"Clash Is Disconnected" = "Awaiting international connection";
+"Clash is disconnected" = "The Marxism link is offline";
+"Connect Clash to inspect live sessions." = "Return Home and connect to communism. Live proxy sessions will appear here.";
+"No Profile" = "No communication plan yet";
+"No Profiles" = "Build your first communication line";
+"No profiles yet" = "Build your first communication line";
+"Add a profile before browsing its rules." = "Import a configuration in Configuration Archives to inspect its routing principles.";
+"Add a profile before browsing its proxies." = "Import a configuration in Configuration Archives to discover its proxy stations.";
+"No Active Connections" = "The line is quiet";
+"Connections appear here while apps use the tunnel." = "The proxy is connected. Sessions appear when apps send traffic through the tunnel.";
+"Loading Connections" = "Reading link activity";
+"Connections Unavailable" = "Link activity is unavailable";
+"International Links" = "International Links";
+"Line Construction" = "Line Construction";
+"Proxy Stations" = "Proxy Stations";
+"Routing Principles" = "Routing Principles";
+"Link Activity" = "Link Activity";
+"Configuration Archives" = "Configuration Archives";
+"Engineering Tools" = "Engineering Tools";
+"More Settings" = "More Settings";

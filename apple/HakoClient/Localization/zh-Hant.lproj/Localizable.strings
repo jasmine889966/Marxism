@@ -13,16 +13,16 @@
 "Cache pruning preserves profiles, resources, settings, credentials, and backups. Clear All removes local profiles, settings, and Keychain credentials, but never iCloud backups." = "清理快取會保留設定檔、資源、設定、認證資訊和備份。清除全部會移除本機設定檔、設定與鑰匙圈認證資訊，但不會刪除 iCloud 備份。";
 "Cancel" = "取消";
 "Changes apply immediately. System Default follows the language selected in iOS Settings." = "更改會立即生效。「跟隨系統」使用 iOS 設定中選擇的語言。";
-"Clash diagnostic message test succeeded" = "Clash 診斷訊息測試成功";
-"Clash is disconnected" = "Clash 未連線";
-"Clash will disconnect. Local profiles, settings, and credentials will be erased. iCloud backups remain available." = "Clash 將中斷連線，並清除本機設定檔、設定與認證資訊。iCloud 備份仍會保留。";
+"Clash diagnostic message test succeeded" = "Marxism 診斷訊息測試成功";
+"Clash is disconnected" = "聯絡尚未建立";
+"Clash will disconnect. Local profiles, settings, and credentials will be erased. iCloud backups remain available." = "Marxism 將中斷連線，並清除本機設定檔、設定與認證資訊。iCloud 備份仍會保留。";
 "Clear All" = "全部清除";
 "Clear All Local Data" = "清除全部本機資料";
 "Clear All Local Data?" = "清除全部本機資料？";
 "Clear Current Logs" = "清空目前記錄";
 "Client Settings" = "用戶端設定";
 "Configuration" = "設定管理";
-"Connect Clash to run tunnel diagnostics." = "連線 Clash 後可執行通道診斷。";
+"Connect Clash to run tunnel diagnostics." = "建立聯絡 後可執行通道診斷。";
 "Connections" = "連線";
 "Contributors" = "貢獻者";
 "Core" = "核心";
@@ -33,9 +33,9 @@
 "Developer" = "開發者";
 "Developer Mode" = "開發者模式";
 "Developer Mode enabled" = "已啟用開發者模式";
-"Diagnostic actions stay on this device. Clash does not upload analytics or crash reports." = "診斷操作只在本機執行。Clash 不上傳分析資料或當機報告。";
+"Diagnostic actions stay on this device. Clash does not upload analytics or crash reports." = "診斷操作只在本機執行。Marxism 不上傳分析資料或當機報告。";
 "Diagnostics" = "診斷";
-"Diagnostics use the active Clash tunnel. STUN can follow routing rules or target one UDP-capable outbound." = "診斷使用目前 Clash 通道。STUN 可跟隨路由規則，或指定支援 UDP 的出站。";
+"Diagnostics use the active Clash tunnel. STUN can follow routing rules or target one UDP-capable outbound." = "診斷使用目前 Marxism 通道。STUN 可跟隨路由規則，或指定支援 UDP 的出站。";
 "English" = "English";
 "Forced crash injection is compiled only into internal signed builds." = "強制當機注入只會編譯進內部簽署版本。";
 "Generate 1,000 Test Logs" = "生成 1,000 條測試記錄";
@@ -118,3 +118,24 @@
 "Switching communication lines" = "正在切換聯絡線路";
 "The link needs attention" = "聯絡受阻，請檢查線路";
 "Direct connection restored" = "已恢復直連";
+
+// Marxism navigation and empty-state presentation.
+"Clash Is Disconnected" = "等待建立國際聯絡";
+"Connect Clash to inspect live sessions." = "回到首頁，連接共產主義後，這裡將顯示即時代理連線。";
+"No Profile" = "尚未設定聯絡線路";
+"No Profiles" = "建立第一條聯絡線路";
+"No profiles yet" = "建立第一條聯絡線路";
+"Add a profile before browsing its rules." = "先在「配置檔案」匯入設定，再查看這條線路的路由準則。";
+"Add a profile before browsing its proxies." = "先在「配置檔案」匯入設定，再查看可用的代理聯絡站。";
+"No Active Connections" = "聯絡線路待命中";
+"Connections appear here while apps use the tunnel." = "代理已連接。應用程式透過隧道存取網路時，聯絡動態會顯示在這裡。";
+"Loading Connections" = "正在讀取聯絡動態";
+"Connections Unavailable" = "暫時無法讀取聯絡動態";
+"International Links" = "國際聯絡";
+"Line Construction" = "線路建設";
+"Proxy Stations" = "代理聯絡站";
+"Routing Principles" = "路由準則";
+"Link Activity" = "聯絡動態";
+"Configuration Archives" = "配置檔案";
+"Engineering Tools" = "工程工具";
+"More Settings" = "更多設定";
