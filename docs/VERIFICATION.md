@@ -93,3 +93,16 @@ layout constraint was removed. Further maximum-accessibility-size testing was
 excluded at the user's request, and the simulator was restored to standard text.
 The gallery uses standard sizes only. Mac minimum-window resizing and full iPad
 rotation remain unverified; the observed Mac window stayed at its existing size.
+
+## Apple TV runtime download retry
+
+On the user's request, attempted official `xcodebuild -downloadPlatform tvOS`
+installation again. tvOS 26.5 arm64 (23L470) and tvOS 26.2 universal (23K51) both
+failed while fetching the MobileAsset catalog with server authentication failure,
+Code 41. The older 18.5 and 18.4 universal requests were reported unavailable.
+Only the iOS 26.5 runtime is installed. Apple TV device types are present, but a
+device type is not a bootable runtime. No tvOS screenshot has been fabricated.
+The public gallery therefore contains the verified Mac, iPhone and iPad captures.
+
+Official installation procedure:
+https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components
