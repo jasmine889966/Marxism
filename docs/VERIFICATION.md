@@ -89,34 +89,21 @@ without shrinking. English iPad home was reviewed in light and dark appearance.
 Normal-size screenshots from these runs are published in the screenshot gallery.
 No claim of every editor or populated provider state is made.
 
-An exploratory maximum-text-size run exposed a fixed-width action label; that
-layout constraint was removed. Further maximum-accessibility-size testing was
-excluded at the user's request, and the simulator was restored to standard text.
-The gallery uses standard sizes only. Mac minimum-window resizing and full iPad
+The primary action label wraps without a fixed-width constraint.
+The gallery uses standard text sizes; maximum accessibility sizes were not audited. Mac minimum-window resizing and full iPad
 rotation remain unverified; the observed Mac window stayed at its existing size.
 
-## Apple TV runtime download history — resolved
+## Apple TV
 
-On the user's request, attempted official `xcodebuild -downloadPlatform tvOS`
-installation again. tvOS 26.5 arm64 (23L470) and tvOS 26.2 universal (23K51) both
-failed while fetching the MobileAsset catalog with server authentication failure,
-Code 41. The older 18.5 and 18.4 universal requests were reported unavailable.
-These were the earlier download failures. The user subsequently installed tvOS 27.0
-(24J5356a) through Xcode Components. Both Apple TV simulator variants now boot.
-The latest unsigned Debug app was installed and launched with English language,
-without test-stage fixtures or a profile. Actual 1920 × 1080 and 3840 × 2160 captures
-were inspected and published. The first render exposed a missing welcome slogan
-and low-contrast portrait: the welcome page now includes the localized slogan and
-the portrait uses the adaptive template color. The instruction wraps to two lines
-and the action label remains complete at both resolutions.
-
-Official installation procedure:
-https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components
+The tvOS 27.0 (24J5356a) runtime was used for both Apple TV simulator variants.
+The unsigned Debug app was installed and launched in English. The gallery contains
+actual 1920 × 1080 and 3840 × 2160 captures of the first-run welcome page.
+The portrait uses an adaptive template color, and the localized slogan and setup
+button remain readable at both resolutions.
 
 ## Project notice and Chinese gallery
 
-The English README and app About page include the requested independent-project
-statement verbatim. The entertainment-only purpose and upstream attribution are
+The English README and app About page state the project’s independence. The entertainment-only purpose and upstream attribution are
 translated into Simplified and Traditional Chinese using the existing catalogs.
 Source and artwork licenses are listed separately in NOTICE.md and the READMEs.
 The original GPL-3.0 file is unchanged. The three app targets build with the new
