@@ -99,7 +99,8 @@ public struct HakoCardSurface<Content: View>: View {
              
              
             .clipShape(shape)
-            .overlay(shape.stroke(separator.opacity(0.16), lineWidth: 0.5))
+            .overlay(shape.stroke(separator.opacity(0.24), lineWidth: 0.5))
+            .shadow(color: .black.opacity(SovietShadow.opacity), radius: SovietShadow.radius, y: SovietShadow.offset)
     }
 
     private var shape: RoundedRectangle {

@@ -12,14 +12,14 @@ public enum HakoAccentRole: String, CaseIterable, Sendable {
 
     public var color: Color {
         switch self {
-        case .blue: .blue
-        case .cyan: .cyan
+        case .blue: SovietColors.red
+        case .cyan: SovietColors.red
         case .green: .green
-        case .indigo: .indigo
+        case .indigo: SovietColors.red
         case .orange: .orange
-        case .pink: .pink
-        case .purple: .purple
-        case .teal: .teal
+        case .pink: SovietColors.red
+        case .purple: SovietColors.red
+        case .teal: SovietColors.red
         }
     }
 }

@@ -7,5 +7,5 @@
 
 public enum HakoClientKitIdentifiers {
      
-    public static let keychainService = "org.example.hako.credentials"
+    public static let keychainService = "io.github.jasmine889966.marxism.credentials"
 }

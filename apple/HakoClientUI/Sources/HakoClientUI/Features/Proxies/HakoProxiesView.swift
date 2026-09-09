@@ -1353,21 +1353,21 @@ public struct HakoProxiesView<Icon: View>: View, Equatable {
                                     )
                                 )
                                 .foregroundStyle(
-                                    tab == active ? Color.blue : Color.primary
+                                    tab == active ? SovietColors.red : Color.primary
                                 )
                                 .padding(.horizontal, 12)
                                 .padding(.vertical, 6)
                                 .background(
                                     Capsule().fill(
                                         tab == active
-                                            ? Color.blue.opacity(0.12)
+                                            ? SovietColors.red.opacity(0.12)
                                             : palette.raisedFill
                                     )
                                 )
                                 .overlay(
                                     Capsule().strokeBorder(
                                         tab == active
-                                            ? Color.blue.opacity(0.45)
+                                            ? SovietColors.red.opacity(0.45)
                                             : .clear,
                                         lineWidth: 1
                                     )

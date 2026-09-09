@@ -70,54 +70,11 @@ public enum HakoMacPlatformPresentation {
     public static let palette: HakoClientUI.HakoProductPalette =
         HakoClientUI.HakoProductPalette(
              
-            canvas: Color(
-                nsColor: NSColor(name: nil) { appearance in
-                    NSColor.windowBackgroundColor.hakoResolved(for: appearance)
-                }
-            ),
-             
-             
-             
-            surface: .clear,
-            raisedFill: Color(
-                nsColor: .unemphasizedSelectedContentBackgroundColor
-            ),
-            separator: Color(nsColor: .separatorColor),
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-            card: Color(
-                nsColor: NSColor(name: nil) { appearance in
-                    appearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
-                        ? NSColor.white.withAlphaComponent(0.037)
-                        : NSColor.black.withAlphaComponent(0.03)
-                }
-            )
+            canvas: SovietColors.canvas,
+            surface: SovietColors.surface,
+            raisedFill: SovietColors.raisedFill,
+            separator: SovietColors.separator,
+            card: SovietColors.card
         )
 }
 

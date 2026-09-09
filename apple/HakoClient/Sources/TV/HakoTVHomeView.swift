@@ -75,7 +75,10 @@ struct HakoTVHomeView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 56) {
             actions
-            explanation
+            VStack(alignment: .leading, spacing: 24) {
+                SovietHomeIdentity()
+                explanation
+            }
         }
         .task(id: clockActive) {
             guard clockActive else { return }
@@ -145,6 +148,7 @@ struct HakoTVHomeView: View {
      
     private var primaryWord: some View {
         HStack(spacing: 24) {
+            SovietBrandMark().frame(width: 36, height: 36)
             if presentation.showsActivity {
                 ProgressView()
             }

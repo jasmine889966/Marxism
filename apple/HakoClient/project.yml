@@ -1,13 +1,13 @@
 name: HakoClient
 options:
-  bundleIdPrefix: org.example.hako
+  bundleIdPrefix: io.github.jasmine889966.marxism
   deploymentTarget:
     iOS: '15.0'
     macOS: '13.0'
     tvOS: '17.0'
 settings:
   base:
-    HAKO_BUNDLE_BASE: org.example.hako
+    HAKO_BUNDLE_BASE: io.github.jasmine889966.marxism
     HAKO_APP_GROUP: group.$(HAKO_BUNDLE_BASE)
     HAKO_ICLOUD_CONTAINER: iCloud.$(HAKO_BUNDLE_BASE)
     HAKO_DEVELOPMENT_TEAM: ''
@@ -65,7 +65,8 @@ targets:
     info:
       path: Info.plist
       properties:
-        CFBundleDisplayName: Clash
+        CFBundleDisplayName: Marxism
+        MarxismCodeSigningAllowed: $(CODE_SIGNING_ALLOWED)
         CFBundleShortVersionString: $(MARKETING_VERSION)
         NSAppTransportSecurity:
           NSAllowsArbitraryLoads: true
@@ -101,9 +102,9 @@ targets:
         - fetch
         - processing
         NSUbiquitousContainers:
-          iCloud.com.hako.network:
+          $(HAKO_ICLOUD_CONTAINER):
             NSUbiquitousContainerIsDocumentScopePublic: true
-            NSUbiquitousContainerName: Clash
+            NSUbiquitousContainerName: Marxism
             NSUbiquitousContainerSupportedFolderLevels: Any
     entitlements:
       path: HakoClient.entitlements
@@ -163,7 +164,7 @@ targets:
     info:
       path: Extension/Info.plist
       properties:
-        CFBundleDisplayName: Clash by Hako
+        CFBundleDisplayName: Marxism by Hako
         CFBundleShortVersionString: '1.0'
         CFBundleVersion: '1'
         NSExtension:
@@ -222,7 +223,7 @@ targets:
     info:
       path: ControlsExtension/Info.plist
       properties:
-        CFBundleDisplayName: Clash Controls
+        CFBundleDisplayName: Marxism Controls
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NSExtension:
@@ -257,7 +258,7 @@ targets:
     info:
       path: ShareExtension/Info.plist
       properties:
-        CFBundleDisplayName: Import to Clash
+        CFBundleDisplayName: Import to Marxism
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NSExtension:
@@ -270,7 +271,7 @@ targets:
   HakoMac:
     type: application
     platform: macOS
-    productName: Clash
+    productName: Marxism
     sources:
     - path: Sources
       excludes:
@@ -315,7 +316,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: $(HAKO_BUNDLE_BASE)
-        PRODUCT_NAME: Clash
+        PRODUCT_NAME: Marxism
         MARKETING_VERSION: 1.0.9
         CURRENT_PROJECT_VERSION: '45'
         DEVELOPMENT_TEAM: $(HAKO_DEVELOPMENT_TEAM)
@@ -325,7 +326,8 @@ targets:
     info:
       path: Resources/macOS/HakoMacInfo.plist
       properties:
-        CFBundleDisplayName: Clash
+        CFBundleDisplayName: Marxism
+        MarxismCodeSigningAllowed: $(CODE_SIGNING_ALLOWED)
         NSAppTransportSecurity:
           NSAllowsArbitraryLoads: true
         CFBundleIconName: AppIcon
@@ -428,7 +430,8 @@ targets:
     info:
       path: MacWidgets/Info.plist
       properties:
-        CFBundleDisplayName: Clash
+        CFBundleDisplayName: Marxism
+        MarxismCodeSigningAllowed: $(CODE_SIGNING_ALLOWED)
         HakoSourceRevision: $(HAKO_SOURCE_REVISION)
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
@@ -472,7 +475,7 @@ targets:
     info:
       path: Resources/macOS/HakoMacExtensionInfo.plist
       properties:
-        CFBundleDisplayName: Clash by Hako
+        CFBundleDisplayName: Marxism by Hako
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         HakoSourceRevision: $(HAKO_SOURCE_REVISION)
@@ -525,6 +528,10 @@ targets:
       group: SharedFacts
     - path: ../HakoClientUI/Sources/HakoClientUI/Design/HakoCopy.swift
       group: SharedFacts
+    - path: ../HakoClientUI/Sources/HakoClientUI/Resources/SovietAssets.xcassets
+    - path: ../HakoClientUI/Sources/HakoClientUI/Design/SovietEmblem.swift
+    - path: ../HakoClientUI/Sources/HakoClientUI/Design/SovietTheme.swift
+    - path: ../HakoClientUI/Sources/HakoClientUI/Components/SovietBrand.swift
     - path: ../HakoClientUI/Sources/HakoClientUI/Design/HakoAccentRole.swift
       group: SharedFacts
     - path: ../HakoClientUI/Sources/HakoClientUI/Design/HakoSymbol.swift
@@ -585,7 +592,8 @@ targets:
     info:
       path: Resources/tvOS/HakoTVInfo.plist
       properties:
-        CFBundleDisplayName: Clash
+        CFBundleDisplayName: Marxism
+        MarxismCodeSigningAllowed: $(CODE_SIGNING_ALLOWED)
         NSLocalNetworkUsageDescription: Let other devices on your network use this
           Apple TV's proxy.
         CFBundleShortVersionString: $(MARKETING_VERSION)
@@ -644,7 +652,7 @@ targets:
     info:
       path: Resources/tvOS/HakoTVExtensionInfo.plist
       properties:
-        CFBundleDisplayName: Clash by Hako
+        CFBundleDisplayName: Marxism by Hako
         UIRequiredDeviceCapabilities:
         - arm64
         CFBundleShortVersionString: $(MARKETING_VERSION)

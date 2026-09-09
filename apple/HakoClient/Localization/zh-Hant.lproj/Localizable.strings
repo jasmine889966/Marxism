@@ -48,7 +48,7 @@
 "Light" = "淺色";
 "Live" = "即時";
 "Local Data" = "本機資料";
-"Local data cleared. Reopen Clash to provision a fresh profile." = "本機資料已清除。請重新開啟 Clash 以初始化新設定檔。";
+"Local data cleared. Reopen Clash to provision a fresh profile." = "本機資料已清除。請重新開啟 Marxism 以初始化新設定檔。";
 "Local diagnostics and data maintenance" = "本機診斷與資料維護";
 "Logs" = "記錄";
 "Materialized proxy/rule provider files" = "已物化的代理與規則 Provider 檔案";
@@ -89,3 +89,32 @@
 "Updates are delivered by the App Store or TestFlight." = "更新由 App Store 或 TestFlight 提供。";
 "Versions" = "版本";
 "iCloud or local file" = "iCloud 或本機檔案";
+
+/* Marxism branding and historical quotations. See docs/BRANDING.md. */
+"Workers of all countries, unite!" = "全世界無產者，聯合起來！";
+"Communism is Soviet power plus the electrification of the whole country." = "共產主義就是蘇維埃政權加全國電氣化。";
+"Lenin, 1920" = "列寧，1920";
+"An unofficial derivative of TokenPLS/Hako-Client. Licensed under GPL-3.0." = "基於 TokenPLS/Hako-Client 的非官方衍生版本，採用 GPL-3.0 授權。";
+"About Marxism" = "關於 Marxism";
+"Reopen Marxism to change language?" = "重新開啟 Marxism 以更改語言？";
+"The tunnel stays connected. The new language takes effect when Marxism reopens." = "隧道會保持連線。重新開啟 Marxism 後，新語言生效。";
+"Remove this profile from Marxism" = "從 Marxism 移除此設定檔";
+"Open Marxism to finish setting up the VPN." = "開啟 Marxism 以完成 VPN 設定。";
+"Rule-based proxy utility · powered by Hako" = "規則代理工具 · 由 Hako 驅動";
+"Karl Marx, Friedrich Engels and Vladimir Lenin" = "馬克思、恩格斯和列寧";
+
+// Marxism connection presentation (original product copy, not historical quotes).
+"Free connection. Shared purpose." = "自由聯結 · 共同前行";
+"Connect to communism" = "連接共產主義";
+"Disconnect the link" = "中斷聯絡";
+"Cancel the link" = "取消聯絡";
+"Rebuild the link" = "重建聯絡";
+"Configure the link" = "設定聯絡線路";
+"Prepare our connection" = "讓聯絡從這裡開始";
+"Ready for international connection" = "國際聯絡，準備就緒";
+"Closing the link" = "正在結束聯絡";
+"Establishing the link" = "正在建立聯絡";
+"International connection established" = "國際聯絡已建立";
+"Switching communication lines" = "正在切換聯絡線路";
+"The link needs attention" = "聯絡受阻，請檢查線路";
+"Direct connection restored" = "已恢復直連";

@@ -9,41 +9,41 @@
 
 enum HakoAppIdentifiers {
      
-    static let base = "org.example.hako"
+    static let base = "io.github.jasmine889966.marxism"
 
      
-    static let appBundleID = "org.example.hako"
+    static let appBundleID = "io.github.jasmine889966.marxism"
 
      
-    static let macAppBundleID = "org.example.hako"
+    static let macAppBundleID = "io.github.jasmine889966.marxism"
 
      
-    static let tvAppBundleID = "org.example.hako"
+    static let tvAppBundleID = "io.github.jasmine889966.marxism"
 
      
-    static let packetTunnelExtensionBundleID = "org.example.hako.extension"
+    static let packetTunnelExtensionBundleID = "io.github.jasmine889966.marxism.extension"
 
      
-    static let macPacketTunnelExtensionBundleID = "org.example.hako.packet-tunnel"
+    static let macPacketTunnelExtensionBundleID = "io.github.jasmine889966.marxism.packet-tunnel"
 
      
-    static let controlsExtensionBundleID = "org.example.hako.controls"
+    static let controlsExtensionBundleID = "io.github.jasmine889966.marxism.controls"
 
      
-    static let shareExtensionBundleID = "org.example.hako.share"
+    static let shareExtensionBundleID = "io.github.jasmine889966.marxism.share"
 
      
-    static let tvPacketTunnelExtensionBundleID = "org.example.hako.tvextension"
+    static let tvPacketTunnelExtensionBundleID = "io.github.jasmine889966.marxism.tvextension"
 
      
-    static let appGroup = "group.org.example.hako"
+    static let appGroup = "group.io.github.jasmine889966.marxism"
 
      
-    static let iCloudContainer = "iCloud.org.example.hako"
+    static let iCloudContainer = "iCloud.io.github.jasmine889966.marxism"
 
      
-    static let backgroundRefreshTask = "org.example.hako.refresh"
+    static let backgroundRefreshTask = "io.github.jasmine889966.marxism.refresh"
 
      
-    static let keychainService = "org.example.hako.credentials"
+    static let keychainService = "io.github.jasmine889966.marxism.credentials"
 }

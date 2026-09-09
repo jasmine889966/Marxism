@@ -1,4 +1,5 @@
 import Hako
+import HakoClientUI
 import SwiftUI
 
 enum AppLanguage: String, CaseIterable, Identifiable {
@@ -84,7 +85,7 @@ enum AppAccent: String, CaseIterable, Identifiable {
 
     var color: Color {
         switch self {
-        case .system: return .accentColor
+        case .system: return SovietColors.red
         case .blue: return .blue
         case .indigo: return .indigo
         case .purple: return .purple

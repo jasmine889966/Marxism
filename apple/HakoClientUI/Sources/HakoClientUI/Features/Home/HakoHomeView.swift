@@ -174,19 +174,6 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
          
          
          
-        .hakoHomePinnedTopBar(
-            stableFootprint: headerCompactionEnabled,
-            footprint: { topBar(compaction: 1) },
-            bar: {
-                if headerCompactionEnabled {
-                    HakoHomeCompactingBar(state: headerCompaction) { progress in
-                        topBar(compaction: progress)
-                    }
-                } else {
-                    topBar(compaction: 0)
-                }
-            }
-        )
         .background(rootCanvas)
          
          
@@ -251,14 +238,6 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
                     Color.clear
                         .frame(height: 0)
                         .id(hakoHomeTopAnchor)
-                    if headerCompactionEnabled {
-                         
-                         
-                         
-                         
-                        Color.clear
-                            .frame(height: headerExpansionDistance)
-                    }
                     homeContent
                         .id(section)
                 }
@@ -310,6 +289,14 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
 
     private var homeContent: some View {
         VStack(spacing: HakoTheme.Spacing.section) {
+            VStack(spacing: SovietSpacing.compact) {
+                SovietHomeIdentity()
+                header(compaction: 0)
+            }
+            .padding(.bottom, SovietSpacing.standard)
+            .background(palette.surface)
+            .clipShape(RoundedRectangle(cornerRadius: SovietRadius.card))
+            sectionPicker
             homeCards
         }
         .padding(.horizontal, HakoTheme.Spacing.standard)
@@ -344,78 +331,19 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
     }
 
     private func header(compaction: CGFloat) -> some View {
-        let distance = headerExpansionDistance * compaction
-        let topReduction = HakoTheme.Spacing.section - HakoTheme.Spacing.tight
-        let statusReductionStart = topReduction
-        let spacingReductionStart = statusReductionStart + statusRowHeight
-        let actionReductionStart = spacingReductionStart + HakoTheme.Spacing.row
-        let bottomReductionStart = actionReductionStart
-            + (HakoTheme.Control.minimumHitTarget - 30)
-        let actionProgress = HakoHomeHeaderCompaction.progress(
-            distance: distance - actionReductionStart,
-            range: HakoTheme.Control.minimumHitTarget - 30
-        )
-         
-         
-         
-        let statusOpacity = 1 - HakoHomeHeaderCompaction.progress(
-            distance: distance,
-            range: HakoTheme.Spacing.row
-        )
-
-         
-         
-         
-         
-        return VStack(
-            alignment: .leading,
-            spacing: HakoHomeHeaderCompaction.stagedValue(
-                expanded: HakoTheme.Spacing.row,
-                compact: 0,
-                distance: distance,
-                after: spacingReductionStart
-            )
-        ) {
-            profileAndPrimaryAction(compaction: actionProgress)
-            if compaction < 1 {
-                connectionStatus
-                    .opacity(statusOpacity)
-                    .frame(
-                        height: HakoHomeHeaderCompaction.stagedValue(
-                            expanded: statusRowHeight,
-                            compact: 0,
-                            distance: distance,
-                            after: statusReductionStart
-                        ),
-                        alignment: .top
-                    )
-                    .clipped()
-            }
+        VStack(alignment: .leading, spacing: HakoTheme.Spacing.row) {
+            profileAndPrimaryAction(compaction: 0)
+            connectionStatus
+                .fixedSize(horizontal: false, vertical: true)
         }
         .padding(.horizontal, HakoTheme.Spacing.standard)
-        .padding(
-            .top,
-            HakoHomeHeaderCompaction.stagedValue(
-                expanded: HakoTheme.Spacing.section,
-                compact: HakoTheme.Spacing.tight,
-                distance: distance,
-                after: 0
-            )
-        )
-        .padding(
-            .bottom,
-            HakoHomeHeaderCompaction.stagedValue(
-                expanded: HakoTheme.Spacing.compact,
-                compact: HakoTheme.Spacing.tight,
-                distance: distance,
-                after: bottomReductionStart
-            )
-        )
+        .padding(.top, HakoTheme.Spacing.section)
+        .padding(.bottom, HakoTheme.Spacing.compact)
     }
 
     @ViewBuilder
     private func profileAndPrimaryAction(compaction: CGFloat) -> some View {
-        if dynamicTypeSize.isAccessibilitySize {
+        if dynamicTypeSize.isAccessibilitySize || presentationClass == .compactTouch {
             VStack(
                 alignment: .leading,
                 spacing: HakoTheme.Spacing.standard
@@ -555,7 +483,11 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
          
          
          
-        HakoHomeConnectionStatus(
+        VStack(alignment: .leading, spacing: 3) {
+            Text(hako: .copy(SovietConnectionCopy.state(snapshot.home.connection)))
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(SovietColors.red)
+            HakoHomeConnectionStatus(
             subtitle: HakoCopy.string(
                 for: snapshot.home.connection.subtitle,
                 locale: locale
@@ -565,6 +497,7 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
             isConnected: snapshot.home.connection.phase == .connected,
             isAccessibilitySize: dynamicTypeSize.isAccessibilitySize
         )
+        }
     }
 
      
@@ -639,20 +572,20 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
                         )
                     )
                 } label: {
-                    primaryActionLabel(title, compaction: compaction)
+                    HStack(spacing: 6) {
+                        SovietBrandMark().frame(width: 18, height: 18)
+                        primaryActionLabel(SovietConnectionCopy.action(snapshot.home.connection.primaryAction, fallback: title), compaction: compaction)
+                    }
                 }
                 .hakoPrimaryActionButtonStyle()
                 .modifier(HakoHomeCapsuleButtonShape())
                 .controlSize(.regular)
-                .tint(
-                    snapshot.home.connection.primaryAction == .disconnect
-                        ? .green
-                        : .blue
-                )
+                .tint(SovietColors.red)
                 .disabled(
                     !snapshot.home.connection.primaryActionEnabled
                         || snapshot.home.isProfileActionInFlight
                 )
+                .accessibilityHint(Text(HakoCopy.key(title)))
                 .accessibilityIdentifier("overview.connection.action")
             } else {
                  
@@ -667,9 +600,14 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
                         send(.performPrimaryAction(.cancel))
                     }
                 } label: {
-                    ProgressView()
-                        .controlSize(.small)
-                        .frame(maxWidth: .infinity, minHeight: 32)
+                    HStack(spacing: 6) {
+                        ProgressView().controlSize(.small)
+                        Text(hako: .copy(cancellable ? "Cancel the link" : "Closing the link"))
+                            .font(.subheadline.weight(.bold))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 32)
                 }
                  
                  
@@ -691,9 +629,9 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
             }
         }
         .frame(
-            minWidth: 104,
-            idealWidth: dynamicTypeSize.isAccessibilitySize ? nil : 104,
-            maxWidth: dynamicTypeSize.isAccessibilitySize ? nil : 104,
+            minWidth: 160,
+            idealWidth: dynamicTypeSize.isAccessibilitySize ? nil : 160,
+            maxWidth: dynamicTypeSize.isAccessibilitySize ? nil : 160,
             minHeight: primaryActionHeight(compaction: compaction),
             idealHeight: primaryActionHeight(compaction: compaction),
             maxHeight: dynamicTypeSize.isAccessibilitySize
@@ -726,6 +664,7 @@ public struct HakoHomeView<Icon: View>: View, Equatable {
             .font(.subheadline.weight(.bold))
             .multilineTextAlignment(.center)
             .lineLimit(1)
+            .minimumScaleFactor(0.8)
 
         if dynamicTypeSize.isAccessibilitySize {
             label

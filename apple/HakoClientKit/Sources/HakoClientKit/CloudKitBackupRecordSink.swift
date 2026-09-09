@@ -5,16 +5,19 @@ import Foundation
  
  
 public final class CloudKitBackupRecordSink: BackupRecordSink, @unchecked Sendable {
-    private let container: CKContainer
+    private let container: CKContainer?
      
      
     public var diagnostics: (@Sendable (String) -> Void)?
 
     public init(containerIdentifier: String) {
-        container = CKContainer(identifier: containerIdentifier)
+        container = CloudKitAvailability.permitsContainer(containerIdentifier)
+            ? CKContainer(identifier: containerIdentifier) : nil
     }
 
     public func upsert(_ payload: BackupRecordPayload) async throws {
+
+        guard let container else { throw BackupRecordSinkError.unavailable(CloudKitAvailability.unavailableMessage) }
         try await requireAccount()
         if let diagnostics {
              
@@ -42,6 +45,8 @@ public final class CloudKitBackupRecordSink: BackupRecordSink, @unchecked Sendab
     }
 
     public func deleteOwn(installID: String) async throws {
+
+        guard let container else { throw BackupRecordSinkError.unavailable(CloudKitAvailability.unavailableMessage) }
         try await requireAccount()
         do {
             _ = try await container.privateCloudDatabase.modifyRecords(
@@ -71,6 +76,7 @@ public final class CloudKitBackupRecordSink: BackupRecordSink, @unchecked Sendab
     }
 
     private func requireAccount() async throws {
+        guard let container else { throw BackupRecordSinkError.unavailable(CloudKitAvailability.unavailableMessage) }
         let status: CKAccountStatus
         do {
             status = try await container.accountStatus()

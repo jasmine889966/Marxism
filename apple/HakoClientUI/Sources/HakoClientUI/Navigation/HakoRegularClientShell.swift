@@ -156,6 +156,8 @@ public struct HakoRegularClientShell<
     DestinationContent: View,
     DetailOverlay: View
 >: View {
+    @State private var sovietSidebarHeight: CGFloat = 0
+    @Environment(\.dynamicTypeSize) private var sovietTypeSize
     @Binding private var navigationState: AppleClientNavigationState
     @State private var columnVisibility: HakoRegularColumnVisibility
     @State private var rootScrollTopVisible = true
@@ -996,9 +998,17 @@ public struct HakoRegularClientShell<
                     }
                 sidebarFoot
             }
+            .background(GeometryReader { geometry in
+                Color.clear.onAppear { sovietSidebarHeight = geometry.size.height }
+                    .onChange(of: geometry.size.height) { sovietSidebarHeight = $0 }
+            })
             .background(sidebarSurfaceBackground)
         } else {
             sidebarScrollingList
+                .background(GeometryReader { geometry in
+                    Color.clear.onAppear { sovietSidebarHeight = geometry.size.height }
+                        .onChange(of: geometry.size.height) { sovietSidebarHeight = $0 }
+                })
                 .safeAreaInset(edge: .top, spacing: 0) {
                     sidebarTopInset
                 }
@@ -1022,6 +1032,7 @@ public struct HakoRegularClientShell<
         }
         .modifier(HakoSidebarFlushContentMargins())
         .accessibilityIdentifier("app.sidebar")
+        .modifier(SovietSidebarListBackground())
         .listStyle(.sidebar)
     }
 
@@ -1038,7 +1049,7 @@ public struct HakoRegularClientShell<
                      
                     Text(hako: .copy(title))
                         .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(SovietColors.onRed.opacity(0.75))
                          
                          
                          
@@ -1124,6 +1135,12 @@ public struct HakoRegularClientShell<
                             .padding(.vertical, 6)
                     }
                 }
+                if sovietSidebarHeight >= 760 && !sovietTypeSize.isAccessibilitySize {
+                    SovietHistoricalNote(sidebar: true)
+                        .foregroundStyle(SovietColors.sidebarGold)
+                        .padding(SovietSpacing.standard)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
             }
             .background(sidebarSurfaceBackground)
         }
@@ -1161,7 +1178,7 @@ public struct HakoRegularClientShell<
                 ) {
                     icon()
                         .foregroundStyle(
-                            isSelected ? AnyShapeStyle(.tint) : AnyShapeStyle(.secondary)
+                            isSelected ? AnyShapeStyle(SovietColors.sidebarGold) : AnyShapeStyle(SovietColors.onRed.opacity(0.85))
                         )
                 }
                 .contentShape(Rectangle())
@@ -1300,9 +1317,22 @@ public struct HakoRegularClientShell<
     }
 
     private var sidebarTopInset: some View {
-        Color.clear
-            .frame(height: HakoTheme.Regular.Sidebar.topInset)
-            .accessibilityHidden(true)
+        VStack(alignment: .leading, spacing: 3) {
+            Text("Marxism")
+                .font(.title2.weight(.bold))
+                .foregroundStyle(SovietColors.onRed)
+            if sovietSidebarHeight >= 600 && !sovietTypeSize.isAccessibilitySize {
+                Text(hako: .copy("Free connection. Shared purpose."))
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(SovietColors.sidebarGold)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 22)
+        .padding(.top, 8)
+        .padding(.bottom, 10)
+        .accessibilityElement(children: .combine)
     }
 
     @ViewBuilder
@@ -1459,11 +1489,7 @@ public struct HakoRegularClientShell<
 
     @ViewBuilder
     private var sidebarSurfaceBackground: some View {
-        if #available(iOS 26.0, macOS 26.0, *) {
-            Color.clear
-        } else {
-            sidebarBackground.ignoresSafeArea()
-        }
+        SovietColors.deepRed.ignoresSafeArea()
     }
 
     @ViewBuilder
@@ -1651,3 +1677,11 @@ public extension HakoRegularClientShell where DetailOverlay == EmptyView {
     }
 }
 #endif
+
+private struct SovietSidebarListBackground: ViewModifier {
+    @ViewBuilder func body(content: Content) -> some View {
+        if #available(iOS 16.0, macOS 13.0, *) {
+            content.scrollContentBackground(.hidden)
+        } else { content }
+    }
+}

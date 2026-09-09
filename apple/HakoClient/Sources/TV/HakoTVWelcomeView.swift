@@ -15,7 +15,7 @@ struct HakoTVWelcomeView: View {
     var body: some View {
         VStack(spacing: 24) {
             HakoTVBrandMark()
-            Text("Clash")
+            Text("Marxism")
                 .font(.largeTitle)
             if restoreLine != nil {
                 Text("Your iPhone or Mac keeps profiles in iCloud: restore them here, or add one by its address.")

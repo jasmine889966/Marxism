@@ -7,16 +7,16 @@ import SwiftUI
  
 public enum HakoTheme {
     public enum Spacing {
-        public static let tight: CGFloat = 4
-        public static let compact: CGFloat = 8
-        public static let row: CGFloat = 12
+        public static let tight: CGFloat = SovietSpacing.tight
+        public static let compact: CGFloat = SovietSpacing.compact
+        public static let row: CGFloat = SovietSpacing.row
          
          
          
          
         public static let cardGap: CGFloat = 10
-        public static let standard: CGFloat = 16
-        public static let section: CGFloat = 24
+        public static let standard: CGFloat = SovietSpacing.standard
+        public static let section: CGFloat = SovietSpacing.section
     }
 
      
@@ -115,8 +115,8 @@ public enum HakoTheme {
     }
 
     public enum Radius {
-        public static let control: CGFloat = 8
-        public static let icon: CGFloat = 9
+        public static let control: CGFloat = SovietRadius.control
+        public static let icon: CGFloat = SovietRadius.icon
 
          
          
@@ -125,19 +125,9 @@ public enum HakoTheme {
          
          
          
-        public static var card: CGFloat {
-            if #available(iOS 26.0, macOS 26.0, tvOS 26.0, *) {
-                return 26
-            }
-            return 12
-        }
+        public static var card: CGFloat { SovietRadius.card }
 
-        public static var groupedSection: CGFloat {
-            if #available(iOS 26.0, macOS 26.0, tvOS 26.0, *) {
-                return 26
-            }
-            return 20
-        }
+        public static var groupedSection: CGFloat { SovietRadius.section }
 
         public static let liquidGlassCard: CGFloat = 24
     }

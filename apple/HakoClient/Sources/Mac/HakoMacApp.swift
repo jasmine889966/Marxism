@@ -195,7 +195,7 @@ struct HakoMacApp: App {
          
          
          
-        Window("Clash", id: "main") {
+        Window("Marxism", id: "main") {
             HakoMacRootView(
                 snapshot: model.snapshot,
                 actions: model.actions,
@@ -2360,7 +2360,7 @@ private final class HakoMacSceneModel: ObservableObject {
             deleteSubtitle:
                 isCurrent
                     ? "Switch profiles before removing this one"
-                    : "Remove this profile from Clash",
+                    : "Remove this profile from Marxism",
             runtimeSummary:
                 isCurrent ? "Active runtime" : "Saved profile",
              
@@ -2966,7 +2966,7 @@ private struct HakoMacPreferencesEnvironment: ViewModifier {
                 }
             }
             .alert(
-                "Reopen Clash to change language?",
+                "Reopen Marxism to change language?",
                 isPresented: $offersLanguageRestart
             ) {
                 Button("Reopen Now") {
@@ -2975,7 +2975,7 @@ private struct HakoMacPreferencesEnvironment: ViewModifier {
                 Button("Later", role: .cancel) {}
             } message: {
                 Text(
-                    "The tunnel stays connected. The new language takes effect when Clash reopens."
+                    "The tunnel stays connected. The new language takes effect when Marxism reopens."
                 )
             }
     }
@@ -3039,7 +3039,7 @@ private struct HakoMacProductCommands: Commands {
             Button {
                 open(.more(.about))
             } label: {
-                Text(hako: .copy("About Clash"))
+                Text(hako: .copy("About Marxism"))
             }
         }
 

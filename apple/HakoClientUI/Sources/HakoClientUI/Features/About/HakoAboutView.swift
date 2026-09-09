@@ -143,7 +143,7 @@ public enum HakoAboutLink:
     public var url: URL {
         switch self {
         case .sourceRepository:
-            URL(string: "https://github.com/TokenPLS/Hako-Client")!
+            URL(string: "https://github.com/jasmine889966/Marxism")!
         }
     }
 }
@@ -197,7 +197,7 @@ public struct HakoAboutView<
                     .padding(.vertical, HakoTheme.Spacing.compact)
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel(
-                        "Clash, Powered by Hako, Version \(snapshot.appVersion)"
+                        "Marxism, Powered by Hako, Version \(snapshot.appVersion)"
                     )
                     .accessibilityIdentifier("about.appHeader")
 
@@ -206,6 +206,15 @@ public struct HakoAboutView<
                 )
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
+            }
+
+            Section {
+                SovietHistoricalNote()
+                Link("Portraits: Eugenio Hansen, OFS · CC BY-SA 4.0",
+                     destination: URL(string: "https://commons.wikimedia.org/wiki/File:Marx_%2B_Engels_%2B_Lenin_.svg")!)
+                    .font(.caption)
+                Text(hako: .copy(SovietCopy.derivative))
+                    .font(.footnote).foregroundStyle(.secondary)
             }
 
             componentsSection
@@ -244,8 +253,10 @@ public struct HakoAboutView<
     }
 
     private var appIcon: some View {
-        icon(.catCircleFill)
-            .font(.system(size: 56, weight: .semibold))
+        Image("SovietPortraits", bundle: .module)
+            .renderingMode(.template)
+            .resizable().scaledToFit()
+            .foregroundStyle(SovietColors.red)
             .foregroundStyle(.tint)
             .frame(width: 64, height: 64)
             .accessibilityHidden(true)
@@ -256,7 +267,7 @@ public struct HakoAboutView<
             alignment: .leading,
             spacing: HakoTheme.Spacing.tight
         ) {
-            Text("Clash")
+            Text("Marxism")
                 .font(.title2.weight(.semibold))
                 .foregroundStyle(.primary)
             Text("Powered by Hako")

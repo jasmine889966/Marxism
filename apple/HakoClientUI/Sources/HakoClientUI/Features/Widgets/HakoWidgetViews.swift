@@ -89,7 +89,7 @@ public struct HakoWidgetMainModel: Equatable {
 
      
     public static func hintKey(needsSetup: Bool) -> String {
-        needsSetup ? "Open Clash to finish setting up the VPN." : "Tap the power button to connect."
+        needsSetup ? "Open Marxism to finish setting up the VPN." : "Tap the power button to connect."
     }
 
      

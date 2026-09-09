@@ -33,7 +33,7 @@
 "Choice confirmed %@" = "选择确认于 %@";
 "Choose the device to restore from" = "选择要从哪台设备恢复";
 "Clash" = "Clash";
-"Clash could not open its secure shared container." = "Clash 无法打开其安全共享容器。";
+"Clash could not open its secure shared container." = "Marxism 无法打开其安全共享容器。";
 "Configuration" = "配置";
 "Configuration is empty" = "配置为空";
 "Configuration profile ID is invalid" = "配置的标识无效";
@@ -319,3 +319,32 @@
 "Your iPhone or Mac keeps profiles in iCloud: restore them here, or add one by its address." = "你的 iPhone 或 Mac 在 iCloud 里存着配置：在这里恢复，或按地址添加一份。";
 "download failed: %@" = "下载失败：%@";
 "tvOS guarantees 500 KB of storage and may discard the rest. A link survives that; a file does not." = "tvOS 只保证 500 KB 的存储空间，其余随时可能被清掉。链接能挺过去；文件不能。";
+
+/* Marxism branding and historical quotations. See docs/BRANDING.md. */
+"Workers of all countries, unite!" = "全世界无产者，联合起来！";
+"Communism is Soviet power plus the electrification of the whole country." = "共产主义就是苏维埃政权加全国电气化。";
+"Lenin, 1920" = "列宁，1920";
+"An unofficial derivative of TokenPLS/Hako-Client. Licensed under GPL-3.0." = "基于 TokenPLS/Hako-Client 的非官方衍生版本，采用 GPL-3.0 许可。";
+"About Marxism" = "关于 Marxism";
+"Reopen Marxism to change language?" = "重新打开 Marxism 以更改语言？";
+"The tunnel stays connected. The new language takes effect when Marxism reopens." = "隧道会保持连接。重新打开 Marxism 后，新语言生效。";
+"Remove this profile from Marxism" = "从 Marxism 移除此配置";
+"Open Marxism to finish setting up the VPN." = "打开 Marxism 以完成 VPN 设置。";
+"Rule-based proxy utility · powered by Hako" = "规则代理工具 · 由 Hako 驱动";
+"Karl Marx, Friedrich Engels and Vladimir Lenin" = "马克思、恩格斯和列宁";
+
+// Marxism connection presentation (original product copy, not historical quotes).
+"Free connection. Shared purpose." = "自由联结 · 共同前行";
+"Connect to communism" = "连接共产主义";
+"Disconnect the link" = "断开联络";
+"Cancel the link" = "取消联络";
+"Rebuild the link" = "重建联络";
+"Configure the link" = "配置联络线路";
+"Prepare our connection" = "让联络从这里开始";
+"Ready for international connection" = "国际联络，准备就绪";
+"Closing the link" = "正在结束联络";
+"Establishing the link" = "正在建立联络";
+"International connection established" = "国际联络已建立";
+"Switching communication lines" = "正在切换联络线路";
+"The link needs attention" = "联络受阻，请检查线路";
+"Direct connection restored" = "已恢复直连";

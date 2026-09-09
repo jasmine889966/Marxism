@@ -29,5 +29,7 @@ private struct HakoTVLaunchRoot: View {
     private var shell: some View {
         HakoTVShell(stage: overrides.stage, connectsOnLaunch: overrides.connectsOnLaunch, updatesOnLaunch: overrides.updatesOnLaunch, matrix: overrides)
             .preferredColorScheme(overrides.appearance?.colorScheme)
+            .tint(SovietColors.red)
+            .background(SovietColors.canvas.ignoresSafeArea())
     }
 }

@@ -1,84 +1,91 @@
-# Clash for Apple Platforms
+# Marxism
+
+**Rule-based proxy utility · powered by Hako**
 
 English · [简体中文](README.zh-CN.md)
 
-A native, rule-based proxy client for iPhone, iPad, Mac and Apple TV, powered by the Hako kernel.
+Marxism is a native rule-based proxy client for iPhone, iPad, Mac and Apple TV,
+with a Soviet-inspired visual theme, licensed historical artwork and localized
+historical slogans. Configuration, routing and tunnel behavior come from Hako-Client.
 
-## Official website and download
+**This project is a modified derivative of TokenPLS/Hako-Client.**
+**Licensed under GPL-3.0.** This is not an official upstream release and is not
+affiliated with or endorsed by any government or political organization.
 
-- [Official website](https://clash.md/)
-- [Download Clash on the App Store](https://apps.apple.com/app/id6794257189)
+![Mac home — unsigned development build](docs/screenshots/macos-home-zh-Hans.png)
 
-Use the App Store link to install the official app. The instructions below are for building from source.
+The screenshot shows the real unsigned development build. A missing shared
+container is shown as unavailable; no connection or traffic data is fabricated.
+See [verification](docs/VERIFICATION.md) for tested targets and remaining checks.
 
-## About this repository
+## What changed
 
-This repository contains the Apple applications, their extensions, shared libraries and resources needed to build them. The [Hako kernel](https://github.com/TokenPLS/Hako) and [Adapter components](https://github.com/TokenPLS/Hako-Adapter) are maintained in separate repositories; their source revisions are pinned in [`Dependencies.lock.json`](Dependencies.lock.json).
+- Shared warm-white/charcoal surfaces, deep red navigation and native controls.
+- Marx/Engels/Lenin portrait identity and standard Soviet button symbols, localized home slogan and About quotation.
+- New app/extension identity: `io.github.jasmine889966.marxism`.
+- A startup guard reports missing iCloud capability instead of crashing in unsigned builds.
+- Core/profile/network models, dependency pins, import formats and URL schemes remain upstream-compatible.
 
-| Directory | Contents |
-| --- | --- |
-| `apple/HakoClient` | Platform applications, extensions and XcodeGen project specification |
-| `apple/HakoClientKit` | Shared configuration and profile models |
-| `apple/HakoClientUI` | Shared interface components |
-| `apple/HakoMacClient` | macOS components |
-
-The source distribution is pre-release. The App Store app version and a checkout of this repository are separate artifacts; pin a source revision when reproducing a build.
+The first derivative is based on upstream commit
+`b05832246fcac69d13ff16df871a8d53fd394c10`.
+Internal Hako module names and compatible technical identifiers are deliberately retained.
 
 ## Build from source
 
-### Requirements
-
-- macOS with Xcode 26.6 and the iOS, macOS and tvOS SDKs.
-- XcodeGen and Git available on your command path.
-- Go with automatic toolchain selection enabled, or the Go 1.26.6 toolchain selected by the pinned kernel's binding module.
-- Python 3 with PyYAML.
-
-### Prepare the project
+Requirements: macOS, a compatible full Xcode with Apple SDKs, XcodeGen, Python 3
+and Go. Upstream documents Xcode 26.6 and Go 1.26.6; the local verification
+uses Xcode 27 beta and Go 1.27.1. Dependencies remain pinned in `Dependencies.lock.json`.
 
 ```sh
-git clone https://github.com/TokenPLS/Hako-Client.git
-cd Hako-Client
+git clone https://github.com/jasmine889966/Marxism.git
+cd Marxism
+git remote add upstream https://github.com/TokenPLS/Hako-Client.git
 python3 -m venv .build/python-env
 source .build/python-env/bin/activate
 python3 -m pip install PyYAML
+# Set DEVELOPER_DIR to your full Xcode if necessary.
 python3 scripts/bootstrap.py
 python3 scripts/configure.py
 ```
 
-The first bootstrap fetches the pinned public Kernel and Adapter sources, installs the pinned gomobile tools and builds the five-slice SDK. It requires network access and can take several minutes. The configure step generates the Xcode project.
-
-Open `apple/HakoClient/HakoClient.xcodeproj` and choose a scheme:
-
-| Platform | Scheme |
-| --- | --- |
-| iPhone / iPad | `HakoClient` |
-| Apple TV | `HakoTV` |
-| Mac | `HakoMac` |
-
-For an unsigned iOS Simulator build:
+Bootstrap builds and verifies all five kernel SDK slices and materializes the
+pinned public Adapter. Choose `HakoClient` (iOS/iPadOS), `HakoMac` or `HakoTV`.
 
 ```sh
 xcodebuild -project apple/HakoClient/HakoClient.xcodeproj \
-  -scheme HakoClient -configuration Release \
+  -scheme HakoClient -configuration Debug \
   -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
 ```
 
-### Sign your own build
+For the local Mac UI, use `./script/build_and_run.sh --verify`. The script respects
+`DEVELOPER_DIR`, falling back to `/Applications/Xcode-beta.app/Contents/Developer`.
+It builds locally without a signing identity; this is not a functional tunnel distribution.
 
-Set your own bundle identifier family and Apple Developer Team ID:
+### Your signed build
 
 ```sh
-python3 scripts/configure.py --bundle-base org.yourname.clash --team YOURTEAMID
+python3 scripts/configure.py --bundle-base io.github.YOUR_ACCOUNT.marxism --team YOURTEAMID
 ```
 
-Configure signing and capabilities for the app and its extensions in Xcode, including Network Extensions, App Groups and any iCloud capabilities you use. Certificates and provisioning profiles are not included. An unsigned build checks compilation; installing on a device requires your own signing setup.
+Enable the matching App Groups, Network Extensions, keychain and iCloud capabilities
+for your own team and all extensions. Certificates and provisioning profiles are
+not included. Containers are independent of the official upstream app; no private
+upstream data is automatically migrated. Original import and backup workflows remain.
 
-## Feedback
+## Development and attribution
 
-Report app problems in [Issues](https://github.com/TokenPLS/Hako-Client/issues). Include the platform and OS version, app version or source revision, reproduction steps, and expected versus actual behavior. Share only the configuration and logs needed to reproduce the problem, with credentials and subscription links removed.
+- [UI/function inventory](docs/UI-INVENTORY.md)
+- [Design, artwork and quotation sources](docs/BRANDING.md)
+- [Validation and limitations](docs/VERIFICATION.md)
+- Upstream client: [TokenPLS/Hako-Client](https://github.com/TokenPLS/Hako-Client)
+- Kernel: [TokenPLS/Hako](https://github.com/TokenPLS/Hako)
+- Adapter: [TokenPLS/Hako-Adapter](https://github.com/TokenPLS/Hako-Adapter)
 
-Kernel issues can be reported in [Hako](https://github.com/TokenPLS/Hako/issues); packet bridge and provider lifecycle issues belong in [Hako-Adapter](https://github.com/TokenPLS/Hako-Adapter/issues).
+Run `python3 scripts/verify_theme.py` and the Swift package tests before submitting
+changes. Report derivative UI issues here; do not represent this fork as upstream's app.
+Remove credentials, subscription URLs and personal data from reports and screenshots.
 
 ## License
 
-[GPL-3.0](LICENSE). Third-party resource licenses remain with their resources.
+[GPL-3.0](LICENSE). Original copyrights and third-party licenses remain with their
+sources and resources. New source and licensed historical artwork use the same license.

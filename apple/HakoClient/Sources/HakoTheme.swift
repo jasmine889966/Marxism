@@ -11,61 +11,12 @@ import UIKit
 enum HakoTheme {
     static var canvas: Color { canvas(pureBlack: AppPreferences.pureBlack()) }
 
-    static func canvas(pureBlack: Bool) -> Color {
-#if os(macOS)
-         
-         
-         
-         
-        _ = pureBlack
-        return Color(
-            nsColor: NSColor(name: nil) { appearance in
-                appearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
-                    ? .black
-                    : .windowBackgroundColor
-            }
-        )
-#else
-        return Color(uiColor: UIColor { traits in
-            pureBlack && traits.userInterfaceStyle == .dark
-                ? .black
-                : .systemGroupedBackground
-        })
-#endif
-    }
-#if os(macOS)
-    static let surface = Color(nsColor: .controlBackgroundColor)
-    static let raisedFill = Color(
-        nsColor: .unemphasizedSelectedContentBackgroundColor
-    )
-    static let separator = Color(nsColor: .separatorColor)
-     
-     
-     
-     
-    static let card = Color(
-        nsColor: NSColor(name: nil) { appearance in
-            if appearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua {
-                return NSColor(
-                    red: 0x2E / 255,
-                    green: 0x2E / 255,
-                    blue: 0x2E / 255,
-                    alpha: 1
-                )
-            }
-            return NSColor.alternatingContentBackgroundColors[1]
-        }
-    )
-#else
-    static let surface = Color(uiColor: .secondarySystemGroupedBackground)
-    static let raisedFill = Color(uiColor: .tertiarySystemFill)
-    static let separator = Color(uiColor: .separator)
-#endif
+    static func canvas(pureBlack: Bool) -> Color { SovietColors.canvas(pureBlack: pureBlack) }
+    static let surface = SovietColors.surface
+    static let raisedFill = SovietColors.raisedFill
+    static let separator = SovietColors.separator
+    static let card = SovietColors.card
 
-     
-     
-     
-     
     enum Spacing {
         static let tight = HakoClientUI.HakoTheme.Spacing.tight
         static let compact = HakoClientUI.HakoTheme.Spacing.compact

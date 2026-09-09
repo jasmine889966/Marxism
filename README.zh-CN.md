@@ -1,84 +1,58 @@
-# Clash for Apple Platforms
+# Marxism
+
+**规则代理工具 · 由 Hako 驱动**
 
 [English](README.md) · 简体中文
 
-基于 Hako 内核的原生规则代理客户端，适用于 iPhone、iPad、Mac 和 Apple TV。
+基于 TokenPLS/Hako-Client 的 Apple 原生规则代理客户端衍生版本，覆盖 iPhone、
+iPad、Mac 和 Apple TV。使用苏联历史视觉、马克思、恩格斯、列宁同向肖像与标准苏联锤镰符号、深红导航与暖白界面，
+保留原项目的配置、订阅、代理、规则、DNS、流量、日志与隧道能力。
 
-## 官网与下载
+**This project is a modified derivative of TokenPLS/Hako-Client.**
+**Licensed under GPL-3.0.** 本项目不是上游官方版本，不代表任何政府或政治组织。
 
-- [官方网站](https://clash.md/)
-- [在 App Store 下载 Clash](https://apps.apple.com/app/id6794257189)
+![Mac 首页：无签名开发构建](docs/screenshots/macos-home-zh-Hans.png)
 
-安装官方应用请使用 App Store 链接。以下说明面向需要从源码构建的开发者。
+截图来自实际运行的无签名开发构建；缺少共享容器时如实显示不可用，不伪造连接或流量。
 
-## 关于本仓库
+## 换肤内容
 
-本仓库包含 Apple 各平台应用、扩展、共享库及构建所需资源。[Hako 内核](https://github.com/TokenPLS/Hako)和 [Adapter 组件](https://github.com/TokenPLS/Hako-Adapter)位于独立仓库，依赖源码提交固定在 [`Dependencies.lock.json`](Dependencies.lock.json) 中。
+- 统一明暗主题、深红侧栏、原生列表和紧凑卡片。
+- 首页整合品牌、主标语、真实配置状态和操作；关于页保留列宁的电气化引文。
+- 标语遵循现有简体中文、繁体中文和英文语言设置，无额外语言选择器。
+- 各平台图标、菜单栏、扩展和小组件品牌更新。
+- 独立安装标识 `io.github.jasmine889966.marxism`；原有导入格式与 URL scheme 保持兼容。
+- 修复无签名构建启动时 CloudKit 容器初始化崩溃：能力缺失时返回已有不可用状态。
 
-| 目录 | 内容 |
-| --- | --- |
-| `apple/HakoClient` | 各平台应用、扩展与 XcodeGen 工程配置 |
-| `apple/HakoClientKit` | 共享配置与档案模型 |
-| `apple/HakoClientUI` | 共享界面组件 |
-| `apple/HakoMacClient` | macOS 组件 |
+历史标语不是网络安全承诺。用户订阅中的名称、旗帜和配置内容保持原样。
+详细出处和视觉规范见[品牌说明](docs/BRANDING.md)。
 
-当前源码分发处于预发布阶段。App Store 应用版本与本仓库检出的源码分别管理；复现构建时请固定源码提交。
+## 构建与验证
 
-## 从源码构建
-
-### 环境要求
-
-- macOS、Xcode 26.6，以及 iOS、macOS、tvOS SDK。
-- 可在命令行使用的 XcodeGen 和 Git。
-- 启用自动工具链选择的 Go，或安装固定内核绑定模块所选择的 Go 1.26.6 工具链。
-- Python 3 和 PyYAML。
-
-### 准备工程
+基线为上游提交 `b05832246fcac69d13ff16df871a8d53fd394c10`，内核及 Adapter
+版本由 `Dependencies.lock.json` 固定。构建需要完整 Xcode、XcodeGen、Python 3、Go。
+完整命令及签名步骤见[英文 README](README.md#build-from-source)。
 
 ```sh
-git clone https://github.com/TokenPLS/Hako-Client.git
-cd Hako-Client
+git clone https://github.com/jasmine889966/Marxism.git
+cd Marxism
 python3 -m venv .build/python-env
 source .build/python-env/bin/activate
 python3 -m pip install PyYAML
 python3 scripts/bootstrap.py
 python3 scripts/configure.py
+./script/build_and_run.sh --verify
 ```
 
-首次准备依赖时会获取固定提交的公开内核与 Adapter 源码，安装固定版本的 gomobile 工具，并构建五切片 SDK。此过程需要网络，可能耗时数分钟。配置脚本随后生成 Xcode 工程。
+本地 Mac 脚本默认使用 Xcode-beta，可用 `DEVELOPER_DIR` 指定自己的完整 Xcode。
+无签名构建用于编译和界面检查，无法代替具备 Apple 团队签名与对应能力的隧道运行验证。
+自己的 App Group、iCloud 容器和 Network Extension 必须一并配置，不自动迁移上游私有数据。
 
-打开 `apple/HakoClient/HakoClient.xcodeproj`，选择相应构建方案：
+- [源码功能地图](docs/UI-INVENTORY.md)
+- [验证结果与待验证范围](docs/VERIFICATION.md)
+- [上游客户端](https://github.com/TokenPLS/Hako-Client)
+- [Hako 内核](https://github.com/TokenPLS/Hako) · [Hako Adapter](https://github.com/TokenPLS/Hako-Adapter)
 
-| 平台 | 构建方案 |
-| --- | --- |
-| iPhone / iPad | `HakoClient` |
-| Apple TV | `HakoTV` |
-| Mac | `HakoMac` |
+## 开源许可
 
-不签名编译 iOS 模拟器版本：
-
-```sh
-xcodebuild -project apple/HakoClient/HakoClient.xcodeproj \
-  -scheme HakoClient -configuration Release \
-  -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
-```
-
-### 签名自己的构建
-
-设置自己的 Bundle ID 前缀与 Apple Developer Team ID：
-
-```sh
-python3 scripts/configure.py --bundle-base org.yourname.clash --team YOURTEAMID
-```
-
-在 Xcode 中为应用和扩展配置签名与所需能力，包括 Network Extensions、App Groups，以及实际使用的 iCloud 能力。仓库不包含证书或描述文件。无签名构建只验证编译；真机安装需要自己的签名配置。
-
-## 问题反馈
-
-应用问题请提交到 [Issues](https://github.com/TokenPLS/Hako-Client/issues)，注明平台与系统版本、应用版本或源码提交、复现步骤，以及预期和实际行为。只分享复现所需的配置与日志，并移除凭据和订阅链接。
-
-内核问题可提交到 [Hako](https://github.com/TokenPLS/Hako/issues)，数据包桥接与扩展生命周期问题请提交到 [Hako-Adapter](https://github.com/TokenPLS/Hako-Adapter/issues)。
-
-## 许可证
-
-[GPL-3.0](LICENSE)。第三方资源的许可证随资源保留。
+保留 [GPL-3.0](LICENSE)、上游版权、第三方资源许可与致谢。品牌资源分别保留 CC BY-SA 4.0（肖像及衍生图标）与 CC0（锤镰符号），新增源码采用 GPL-3.0。本轮提供公开源码，不包含 App Store 提交或签名安装包发布。

@@ -33,7 +33,7 @@
 "Choice confirmed %@" = "Choice confirmed %@";
 "Choose the device to restore from" = "Choose the device to restore from";
 "Clash" = "Clash";
-"Clash could not open its secure shared container." = "Clash could not open its secure shared container.";
+"Clash could not open its secure shared container." = "Marxism could not open its secure shared container.";
 "Configuration" = "Configuration";
 "Configuration is empty" = "Configuration is empty";
 "Configuration profile ID is invalid" = "Configuration profile ID is invalid";
@@ -319,3 +319,32 @@
 "Your iPhone or Mac keeps profiles in iCloud: restore them here, or add one by its address." = "Your iPhone or Mac keeps profiles in iCloud: restore them here, or add one by its address.";
 "download failed: %@" = "download failed: %@";
 "tvOS guarantees 500 KB of storage and may discard the rest. A link survives that; a file does not." = "tvOS guarantees 500 KB of storage and may discard the rest. A link survives that; a file does not.";
+
+/* Marxism branding and historical quotations. See docs/BRANDING.md. */
+"Workers of all countries, unite!" = "Workers of all countries, unite!";
+"Communism is Soviet power plus the electrification of the whole country." = "Communism is Soviet power plus the electrification of the whole country.";
+"Lenin, 1920" = "Lenin, 1920";
+"An unofficial derivative of TokenPLS/Hako-Client. Licensed under GPL-3.0." = "An unofficial derivative of TokenPLS/Hako-Client. Licensed under GPL-3.0.";
+"About Marxism" = "About Marxism";
+"Reopen Marxism to change language?" = "Reopen Marxism to change language?";
+"The tunnel stays connected. The new language takes effect when Marxism reopens." = "The tunnel stays connected. The new language takes effect when Marxism reopens.";
+"Remove this profile from Marxism" = "Remove this profile from Marxism";
+"Open Marxism to finish setting up the VPN." = "Open Marxism to finish setting up the VPN.";
+"Rule-based proxy utility · powered by Hako" = "Rule-based proxy utility · powered by Hako";
+"Karl Marx, Friedrich Engels and Vladimir Lenin" = "Karl Marx, Friedrich Engels and Vladimir Lenin";
+
+// Marxism connection presentation (original product copy, not historical quotes).
+"Free connection. Shared purpose." = "Free connection. Shared purpose.";
+"Connect to communism" = "Connect to communism";
+"Disconnect the link" = "Disconnect the link";
+"Cancel the link" = "Cancel the link";
+"Rebuild the link" = "Rebuild the link";
+"Configure the link" = "Configure the link";
+"Prepare our connection" = "Prepare our connection";
+"Ready for international connection" = "Ready for international connection";
+"Closing the link" = "Closing the link";
+"Establishing the link" = "Establishing the link";
+"International connection established" = "International connection established";
+"Switching communication lines" = "Switching communication lines";
+"The link needs attention" = "The link needs attention";
+"Direct connection restored" = "Direct connection restored";

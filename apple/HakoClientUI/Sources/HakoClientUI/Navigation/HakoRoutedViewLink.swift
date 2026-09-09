@@ -562,7 +562,7 @@ public struct HakoRoutedViewDestination<Destination: View>: View {
         HakoNavigationTransaction.resignCurrentField()
         routeIsPresented = true
         let presented = _isPresented
-        let routed = _routeIsPresented
+        let routed = $routeIsPresented
         let destination = destination
         HakoViewRouteRegistry.set(
             token,

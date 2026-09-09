@@ -57,7 +57,7 @@ public enum HakoMoreDestination:
         case .coreBehavior: "Core Behavior"
         case .clientSettings: "Client Settings"
         case .appearance: "Appearance"
-        case .about: "About Clash"
+        case .about: "About Marxism"
         case .developer: "Developer"
         }
     }

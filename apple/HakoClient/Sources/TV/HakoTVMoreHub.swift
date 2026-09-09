@@ -190,7 +190,10 @@ struct HakoTVMoreHub: View {
         VStack(spacing: 12) {
             HakoTVBrandMark(width: HakoTVBrandMark.aboutWidth)
                 .padding(.bottom, 20)
-            Text("Clash")
+            SovietHistoricalNote()
+                .foregroundStyle(SovietColors.text)
+                .padding(.bottom, 12)
+            Text("Marxism")
                 .font(.title2)
             Text("Powered by Hako")
                 .font(.body)

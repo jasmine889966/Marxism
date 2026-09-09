@@ -54,10 +54,10 @@ public struct HakoRootSidebarRow<Icon: View>: View {
         .padding(.horizontal, horizontalPadding)
         .foregroundStyle(contentStyle)
         .background {
-            Capsule()
+            RoundedRectangle(cornerRadius: SovietRadius.control)
                 .fill(
                     isSelected
-                        ? Color.primary.opacity(
+                        ? SovietColors.onRed.opacity(
                             HakoTheme.Opacity.regularSidebarSelection
                         )
                         : Color.clear
@@ -94,7 +94,7 @@ public struct HakoRootSidebarRow<Icon: View>: View {
      
      
     private var contentStyle: AnyShapeStyle {
-        isSelected ? AnyShapeStyle(.tint) : AnyShapeStyle(.primary)
+        AnyShapeStyle(SovietColors.onRed)
     }
 
     private var title: some View {
@@ -121,7 +121,7 @@ public struct HakoRootSidebarRow<Icon: View>: View {
                 EmptyView()
             } else {
                 Rectangle()
-                    .fill(Color.primary.opacity(0.02))
+                    .fill(SovietColors.onRed.opacity(0.02))
                     .frame(width: 12, height: 12)
                     .accessibilityHidden(true)
             }

@@ -169,7 +169,7 @@ struct HakoTVHomePresentation: Equatable {
      
      
     private static func word(_ presentation: HakoHomeConnectionPresentation) -> String {
-        (presentation.primaryActionTitle ?? presentation.title).localizedForTelevision
+        SovietConnectionCopy.action(presentation.primaryAction, fallback: presentation.primaryActionTitle ?? presentation.title).localizedForTelevision
     }
 
      
