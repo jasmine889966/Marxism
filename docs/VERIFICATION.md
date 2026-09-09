@@ -10,7 +10,8 @@ The upstream baseline is `b05832246fcac69d13ff16df871a8d53fd394c10`.
 - Pinned upstream kernel and adapter from `Dependencies.lock.json`; all five SDK slices present.
 - HakoMac: Debug unsigned build and actual macOS launch verified.
 - HakoClient: Debug iOS Simulator build verified; unsigned and ad-hoc variants.
-- HakoTV: Debug tvOS Simulator build verified.
+- HakoTV: Debug tvOS Simulator build, installation and launch verified on tvOS 27.0
+  (24J5356a), Apple TV 4K third generation at 1080p and 4K.
 - Local build logs are ignored under `.build/verification/`.
 
 Upstream baseline compilation under this Xcode failed in `HakoRoutedViewLink` when a
@@ -60,8 +61,8 @@ this repository. Local private inputs/logs remain ignored under `.build/private/
 - Subscription import/update through the complete app UI, selected-proxy changes,
   all-node latency, configuration edits, logs/DNS/rules/traffic and backup roundtrips
   with a live provisioned tunnel remain unverified.
-- tvOS runtime/focus: platform runtime download failed with Apple's authentication
-  error Code 41; compilation is verified, runtime is not.
+- tvOS remote focus traversal, populated data states and live tunnel operations
+  remain unverified. First-run launch and English rendering are verified.
 - Exhaustive VoiceOver, maximum Dynamic Type, reduced motion, iPad rotation and
   every localized editor/dialog require further interactive/device coverage.
 - App Store distribution and signed installers are outside this delivery.
@@ -94,15 +95,20 @@ excluded at the user's request, and the simulator was restored to standard text.
 The gallery uses standard sizes only. Mac minimum-window resizing and full iPad
 rotation remain unverified; the observed Mac window stayed at its existing size.
 
-## Apple TV runtime download retry
+## Apple TV runtime download history — resolved
 
 On the user's request, attempted official `xcodebuild -downloadPlatform tvOS`
 installation again. tvOS 26.5 arm64 (23L470) and tvOS 26.2 universal (23K51) both
 failed while fetching the MobileAsset catalog with server authentication failure,
 Code 41. The older 18.5 and 18.4 universal requests were reported unavailable.
-Only the iOS 26.5 runtime is installed. Apple TV device types are present, but a
-device type is not a bootable runtime. No tvOS screenshot has been fabricated.
-The public gallery therefore contains the verified Mac, iPhone and iPad captures.
+These were the earlier download failures. The user subsequently installed tvOS 27.0
+(24J5356a) through Xcode Components. Both Apple TV simulator variants now boot.
+The latest unsigned Debug app was installed and launched with English language,
+without test-stage fixtures or a profile. Actual 1920 × 1080 and 3840 × 2160 captures
+were inspected and published. The first render exposed a missing welcome slogan
+and low-contrast portrait: the welcome page now includes the localized slogan and
+the portrait uses the adaptive template color. The instruction wraps to two lines
+and the action label remains complete at both resolutions.
 
 Official installation procedure:
 https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components

@@ -26,10 +26,12 @@ struct HakoTVBrandMark: View {
     var width: CGFloat = HakoTVBrandMark.width
 
     var body: some View {
-        Image("HakoBrandMark")
+        Image("SovietPortraits")
+            .renderingMode(.template)
             .resizable()
             .scaledToFit()
             .frame(width: width)
+            .foregroundStyle(SovietColors.red)
             .accessibilityHidden(true)
     }
 }

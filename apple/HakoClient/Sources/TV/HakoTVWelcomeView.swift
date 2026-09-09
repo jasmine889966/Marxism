@@ -16,7 +16,12 @@ struct HakoTVWelcomeView: View {
         VStack(spacing: 24) {
             HakoTVBrandMark()
             Text("Marxism")
-                .font(.largeTitle)
+                .font(.largeTitle.weight(.bold))
+            Text(SovietCopy.workers.localizedForTelevision)
+                .font(.title3.weight(.bold))
+                .foregroundStyle(SovietColors.red)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: 900)
             if restoreLine != nil {
                 Text("Your iPhone or Mac keeps profiles in iCloud: restore them here, or add one by its address.")
                     .font(.body)
@@ -33,9 +38,9 @@ struct HakoTVWelcomeView: View {
             if let restoreLine, let onRestore {
                 Button(restoreLine, action: onRestore)
                     .padding(.top, 12)
-                Button("Add a profile", action: onAddSubscription)
+                Button("Configure the link", action: onAddSubscription)
             } else {
-                Button("Add a profile", action: onAddSubscription)
+                Button("Configure the link", action: onAddSubscription)
                     .padding(.top, 12)
             }
         }

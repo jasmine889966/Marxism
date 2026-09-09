@@ -24,10 +24,16 @@ affiliated with or endorsed by any government or political organization.
 | --- | --- |
 | <img src="docs/screenshots/ipad-pro-13-home-dark-en.png" alt="English iPad dark appearance" width="420"> | <img src="docs/screenshots/macos-activity-en.png" alt="English disconnected activity state" width="520"> |
 
+### Apple TV
+
+![Marxism on Apple TV — English](docs/screenshots/apple-tv-1080p-en.png)
+
+[View the full 4K capture](docs/screenshots/apple-tv-4k-en.png).
+
 Real application captures, using standard text sizes and English app language.
 Development builds honestly show missing capabilities; no successful VPN connection
 or traffic is staged. [Screenshot details and more views](docs/screenshots/README.md).
-The tvOS target builds, but its runtime was unavailable for screenshots.
+Apple TV was also checked on the tvOS 27 Simulator at 1080p and 4K.
 See [verification](docs/VERIFICATION.md) for the exact scope and remaining checks.
 
 ## What changed
